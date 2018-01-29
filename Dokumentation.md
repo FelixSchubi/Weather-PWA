@@ -50,6 +50,7 @@ Um dies zu nutzen sind folgende Schritte notwendig:
 → Nun besteht die Möglichkeit die Konsole vom Android Gerät am Rechner abzulesen
 
 ##Grundlage
+
 Als Grundlage für das gesamte Projekt wird ein Beispiel aus den Code Labs von Google benutzt.
 Und zwar das Projekt: 
 Your First Progressive Web App
@@ -57,6 +58,7 @@ Your First Progressive Web App
 Nach der Erstellung der App und die Einarbeitung in HTML5 und JavaScript wurde mit der ausgiebigeren Recherche zum Thema Progressive Web Apps begonnen.
 
 ##Offlinefähigkeit
+
 Der wichtigste Punkt bei solchen Anwendungen ist die Offlinefähigkeit.
 Ein weiterer Schritt war nun die maximalen Speichergrenzen zu finden.
 Eine Übersicht dieser und eine Möglichkeit sie für jedes Gerät und jeden Browser individuell zu testen findet man unter:
