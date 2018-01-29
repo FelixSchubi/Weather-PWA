@@ -114,9 +114,9 @@ Das Alles wurde in einem GitHub Repository zusammengeführt.
 
 ## Pluralsight 
 
-- https://www.pluralsight.com/ <br/>
 Creating Offline-first Mobile Apps with HTML5:
 Grobe Anleitung zum Erstellen einer Web App anhand eines Beispiels.
+- https://www.pluralsight.com/ 
 - https://github.com/phiratio/Pluralsight-materials/tree/master/Individual%20course%20series/Creating%20Offline-first%20Mobile%20Apps%20with%20HTML5
 
 
@@ -127,9 +127,9 @@ Eventuell neue Möglichkeiten zur Evaluierung? IOS-Devices??
 
 ## Nativefier 
 
-https://github.com/jiahaog/nativefier <br/>
 Dadurch hat man nun die Möglichkeit eine WebApp für Desktop-Rechner zu erstellen. Hierbei spielt es keine Rolle welcher Browser installiert ist.
 Bei GoogleChrome besteht die Möglichkeit, ein App-Shortcut am Desktop anzulegen und dieses zu nutzen. Bei Firefox sucht man diese Funktion leider noch vergebens.  
+- https://github.com/jiahaog/nativefier <br/>
 
 
 
