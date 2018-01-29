@@ -11,7 +11,7 @@
   - [GitHub](#gitHub)
   - [Pluralsight](#pluralsight)
   - [Handbuch](#handbuch)
-  - [nativefier](#nativefier)
+  - [Nativefier](#nativefier)
   
 ## Start
 
@@ -115,7 +115,7 @@ Handbuch zum Testen von Web- und Mobile-Apps <br/>
 Eventuell neue Möglichkeiten zur Evaluierung. IOS-Devices?
 - https://link.springer.com/book/10.1007/978-3-662-44028-5
 
-## nativefier (https://github.com/jiahaog/nativefier)
+## Nativefier (https://github.com/jiahaog/nativefier)
 Dadurch hat man nun die möglichkeit eine WebApp für Desktop-Rechner zu erstellen. Hierbei spielt es keine Rolle welcher Browser installiert ist.
 Bei GoogleChrome besteht die Möglichkeit, ein App-Shortcut am Desktop anzulegen und dieses zu nutzen. Bei Firefox sucht man diese Funktion leider noch vergebens.  
 
