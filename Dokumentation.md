@@ -32,14 +32,15 @@ Zur Evaluierung wird das Programm Genymotion verwendet:
 - Bei der Verwendung des Programms sind jedoch nach einiger Zeit vermehrt Fehlermeldungen aufgetreten. Oftmals hat sich das ganze Programm auf gehangen und teilweise ist der gesamte Rechner abgestürzt. Deshalb musste ich mich nach einer Alternative umsehen.
 
 Eine Alternative zu Genymotion ist Android-Studio:
-(Installationsguide für Ubuntu: https://developer.android.com/studio/install.html)
-(Starter Angelegen: https://askubuntu.com/questions/141229/how-to-add-a-shell-script-to-launcher-as-shortcut )
+- (Installationsguide für Ubuntu: https://developer.android.com/studio/install.html)
+- (Starter Angelegen: https://askubuntu.com/questions/141229/how-to-add-a-shell-script-to-launcher-as-shortcut )
+
 Das oben genannte Standardgerät muss als neues virtuelles Gerät angelegt werden:
 - https://stackoverflow.com/questions/10833402/android-avd-settings-for-galaxy-s3-like-avd
 Bei manchen Geräten ist der PlayStore mit dabei!
-Emulator mit Cold Boot starten! (Rechtsklick bei der Auswahl) sonst bleibt der Display schwarz
-Es muss noch ein Weg gefunden werden die Gapps auch bei anderen Devices zu installieren
-Download von Apps erfolgt von dieser Seite: 
+- Emulator mit Cold Boot starten! (Rechtsklick bei der Auswahl) sonst bleibt der Display schwarz
+- Es muss noch ein Weg gefunden werden die Gapps auch bei anderen Devices zu installieren
+- Download von Apps erfolgt von dieser Seite: 
 - https://www.apkmirror.com/
 → http://www.giga.de/apps/android/specials/apk-mirror-serioeser-download-von-android-apps/
 
@@ -49,13 +50,13 @@ Um eine Konsole für einen Android Browser zu erhalten wird die Möglichkeit von
 - https://developers.google.com/web/tools/chrome-devtools/remote-debugging/?utm_source=dcc&utm_medium=redirect&utm_campaign=2016q3
 Um dies zu nutzen sind folgende Schritte notwendig:
 
-- Im Emulator den DeveloperModus Aktivieren 
+1. Im Emulator den DeveloperModus Aktivieren 
 	( 8x in den Einstellungen auf Build-Number drücken)
-- USB-Debugging in den Developer-Options Aktivieren 
-- GoogleChrome für das Android Gerät herunterladen und installieren
-- GoogleChrome am Rechner Starten
-	-> In den Entwicklertools den Punkt "remote devices" öffnen 
-- Nun besteht die Möglichkeit die Konsole vom Android Gerät am Rechner abzulesen
+2. USB-Debugging in den Developer-Options Aktivieren 
+3. GoogleChrome für das Android Gerät herunterladen und installieren
+4. GoogleChrome am Rechner Starten
+5. -> In den Entwicklertools den Punkt "remote devices" öffnen 
+6. Nun besteht die Möglichkeit die Konsole vom Android Gerät am Rechner abzulesen
 
 ## Grundlage
 
