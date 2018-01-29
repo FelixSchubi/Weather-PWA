@@ -121,14 +121,14 @@ Grobe Anleitung zum Erstellen einer Web App anhand eines Beispiels.
 
 
 ## Handbuch
-Handbuch zum Testen von Web- und Mobile-Apps <br/>
-Eventuell neue Möglichkeiten zur Evaluierung. IOS-Devices?
+Handbuch zum Testen von Web- und Mobilen-Apps <br/>
+Eventuell neue Möglichkeiten zur Evaluierung? IOS-Devices??
 - https://link.springer.com/book/10.1007/978-3-662-44028-5
 
 ## Nativefier 
 
 https://github.com/jiahaog/nativefier <br/>
-Dadurch hat man nun die möglichkeit eine WebApp für Desktop-Rechner zu erstellen. Hierbei spielt es keine Rolle welcher Browser installiert ist.
+Dadurch hat man nun die Möglichkeit eine WebApp für Desktop-Rechner zu erstellen. Hierbei spielt es keine Rolle welcher Browser installiert ist.
 Bei GoogleChrome besteht die Möglichkeit, ein App-Shortcut am Desktop anzulegen und dieses zu nutzen. Bei Firefox sucht man diese Funktion leider noch vergebens.  
 
 
