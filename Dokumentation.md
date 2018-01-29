@@ -7,7 +7,7 @@ PWA "https://developers.google.com/web/progressive-web-apps/"
 ## Table of Contents
 
   - [Start](#start)
-  - [Konsole für Android Browser] (#Konsole-für-Android-Browser)
+  - [Konsole für Android Browser] (#konsole-für-android-browser)
   - [Grundlage] (#grundlage)
   - [Offlinefähigkeit] (#offlinefähigkeit)
   - [Bilder Offline Speichern] (#Bilder-Offline-Speichern)
