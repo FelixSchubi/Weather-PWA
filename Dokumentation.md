@@ -1,5 +1,9 @@
 # Evaluierung von PWA‘s 
 
+
+<img src="images/pwa-reliable.png" alt="alt text" width="800" height="250">
+
+
 ```bash
 PWA "https://developers.google.com/web/progressive-web-apps/"
 ```
