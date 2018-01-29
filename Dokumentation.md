@@ -49,7 +49,7 @@ Um dies zu nutzen sind folgende Schritte notwendig:
 	-> In den Entwicklertools den Punkt "remote devices" öffnen 
 → Nun besteht die Möglichkeit die Konsole vom Android Gerät am Rechner abzulesen
 
-##Grundlage
+## Grundlage
 
 Als Grundlage für das gesamte Projekt wird ein Beispiel aus den Code Labs von Google benutzt.
 Und zwar das Projekt: 
@@ -57,7 +57,7 @@ Your First Progressive Web App
 - https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/
 Nach der Erstellung der App und die Einarbeitung in HTML5 und JavaScript wurde mit der ausgiebigeren Recherche zum Thema Progressive Web Apps begonnen.
 
-##Offlinefähigkeit
+## Offlinefähigkeit
 
 Der wichtigste Punkt bei solchen Anwendungen ist die Offlinefähigkeit.
 Ein weiterer Schritt war nun die maximalen Speichergrenzen zu finden.
@@ -72,7 +72,7 @@ Dafür wurde zu Beginn die selbe API benutzt, die auch die Entwickler von Google
 Dies erwies sich auch an allen Rechnern als Erfolg.
 Bei der Evaluierung für Android Geräte stellte sich jedoch heraus, dass diese API für das Vorhaben bei mobilen Browsern nicht geeignet ist.
 
-##Bilder Offline Speichern
+## Bilder Offline Speichern
 
 Daraufhin musste auf eine andere zurückgegriffen werden. Nämlich IndexedDB:
 - https://developer.mozilla.org/de/docs/IndexedDB
@@ -84,7 +84,7 @@ Um ein Bild einzufügen und vor dem Speicher als Thumbnail zu sehen wurde der Co
 
 Durch viel Ausprobieren und Codeveränderung ist es nun möglich, Bilder sowohl an Desktop Rechnern, sowie an Android Geräten aufzunehmen und offline zu Speichern.
 
-##Offline Notizen
+## Offline Notizen
 
 Im Anschluss kam die Frage auf was eine Progressive Web App noch alles können sollte.
 Besonders zum Thema offline Fähigkeit kam mir die Idee eine Möglichkeit einzubinden, Notizen offline zu Speichern und bei Bedarf anzusehen und zu löschen.
@@ -95,7 +95,7 @@ Ein solches Projekt gab es schon, wodurch es mir möglich war den Code größten
 - http://blog.teamtreehouse.com/create-your-own-to-do-app-with-html5-and-indexeddb
 
 
-##GitHub
+## GitHub
 
 Das Alles wurde in einem GitHub Repository zusammengeführt.
 - https://github.com/FelixSchubi/Weather-PWA
@@ -103,18 +103,18 @@ Das Alles wurde in einem GitHub Repository zusammengeführt.
 
 
 
-##Pluralsight (https://www.pluralsight.com/)
+## Pluralsight (https://www.pluralsight.com/)
 
 Creating Offline-first Mobile Apps with HTML5:
 Grobe Anleitung zum Erstellen einer Web App anhand eines Beispiels.
 - https://github.com/phiratio/Pluralsight-materials/tree/master/Individual%20course%20series/Creating%20Offline-first%20Mobile%20Apps%20with%20HTML5
 
 
-##Handbuch zum Testen von Web- und Mobile-Apps
+## Handbuch zum Testen von Web- und Mobile-Apps
 Eventuell neue Möglichkeiten zur Evaluierung. IOS-Devices?
 - https://link.springer.com/book/10.1007/978-3-662-44028-5
 
-##nativefier(https://github.com/jiahaog/nativefier)
+## nativefier(https://github.com/jiahaog/nativefier)
 Dadurch hat man nun die möglichkeit eine WebApp für Desktop-Rechner zu erstellen. Hierbei spielt es keine Rolle welcher Browser installiert ist.
 Bei GoogleChrome besteht die Möglichkeit, ein App-Shortcut am Desktop anzulegen und dieses zu nutzen. Bei Firefox sucht man diese Funktion leider noch vergebens.  
 
