@@ -5,13 +5,13 @@
   - [Start](#start)
   - [Konsole für Android Browser] (#Konsole-für-Android-Browser)
   - [Grundlage] (#grundlage)
-  - [Offlinefähigkeit] (#Offline-fähigkeit)
+  - [Offlinefähigkeit] (#offlinefähigkeit)
   - [Bilder Offline Speichern] (#Bilder-Offline-Speichern)
   - [Offline Notizen](#Offline-Notizen)
-  - [GitHub](#Git-Hub)
-  - [Pluralsight](#Plural-sight)
-  - [Handbuch](#Hand-buch)
-  - [nativefier](#native-fier)
+  - [GitHub](#gitHub)
+  - [Pluralsight](#pluralsight)
+  - [Handbuch](#handbuch)
+  - [nativefier](#nativefier)
   
 ## Start
 
