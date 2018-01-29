@@ -107,8 +107,9 @@ Das Alles wurde in einem GitHub Repository zusammengeführt.
 
 
 
-## Pluralsight (https://www.pluralsight.com/)
+## Pluralsight 
 
+- https://www.pluralsight.com/ <br/>
 Creating Offline-first Mobile Apps with HTML5:
 Grobe Anleitung zum Erstellen einer Web App anhand eines Beispiels.
 - https://github.com/phiratio/Pluralsight-materials/tree/master/Individual%20course%20series/Creating%20Offline-first%20Mobile%20Apps%20with%20HTML5
