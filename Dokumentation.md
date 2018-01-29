@@ -25,7 +25,7 @@ PWA "https://developers.google.com/web/progressive-web-apps/"
 
 
 Zur Evaluierung wird das Programm Genymotion verwendet:
-(Download Link: https://www.genymotion.com/)
+- https://www.genymotion.com/
 - Ein Android Emulator mit dem man verschiedene Devices emulieren kann
 - Ebenfalls können die passenden Android Gapps für jedes Gerät einfach installiert werden
 -  Ich lege als standard Gerät das Samsung Galaxy S3 fest
@@ -49,13 +49,13 @@ Um eine Konsole für einen Android Browser zu erhalten wird die Möglichkeit von
 - https://developers.google.com/web/tools/chrome-devtools/remote-debugging/?utm_source=dcc&utm_medium=redirect&utm_campaign=2016q3
 Um dies zu nutzen sind folgende Schritte notwendig:
 
-→ Im Emulator den DeveloperModus Aktivieren 
+- Im Emulator den DeveloperModus Aktivieren 
 	( 8x in den Einstellungen auf Build-Number drücken)
-→ USB-Debugging in den Developer-Options Aktivieren 
-→ GoogleChrome für das Android Gerät herunterladen und installieren
-→ GoogleChrome am Rechner Starten
+- USB-Debugging in den Developer-Options Aktivieren 
+- GoogleChrome für das Android Gerät herunterladen und installieren
+- GoogleChrome am Rechner Starten
 	-> In den Entwicklertools den Punkt "remote devices" öffnen 
-→ Nun besteht die Möglichkeit die Konsole vom Android Gerät am Rechner abzulesen
+- Nun besteht die Möglichkeit die Konsole vom Android Gerät am Rechner abzulesen
 
 ## Grundlage
 
