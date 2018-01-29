@@ -1,7 +1,7 @@
 # Evaluierung von PWA‘s 
 
 
-<img src="images/pwa-reliable.png" alt="alt text" width="800" height="250">
+<img src="images/pwa-reliable.png" alt="PWA-reliable" width="800" height="250">
 
 
 ```bash
