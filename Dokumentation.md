@@ -3,15 +3,15 @@
 ## Table of Contents
 
   - [Start](#start)
-  - [Konsole für Android Browser] (#Konsole für Android Browser)
-  - [Grundlage] (#Grundlage)
-  - [Offlinefähigkeit] (#Offlinefähigkeit)
-  - [Bilder Offline Speichern] (#Bilder Offline Speichern)
-  - [Offline Notizen](#Offline Notizen)
-  - [GitHub](#GitHub)
-  - [Pluralsight](#Pluralsight)
-  - [Handbuch](#Handbuch)
-  - [nativefier](#nativefier)
+  - [Konsole für Android Browser] (#Konsole-für-Android-Browser)
+  - [Grundlage] (#grundlage)
+  - [Offlinefähigkeit] (#Offline-fähigkeit)
+  - [Bilder Offline Speichern] (#Bilder-Offline-Speichern)
+  - [Offline Notizen](#Offline-Notizen)
+  - [GitHub](#Git-Hub)
+  - [Pluralsight](#Plural-sight)
+  - [Handbuch](#Hand-buch)
+  - [nativefier](#native-fier)
   
 ## Start
 
