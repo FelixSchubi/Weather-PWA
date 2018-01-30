@@ -17,7 +17,7 @@ html, body {
   margin: 0;
   height: 100%;
   width: 100%;
-  font-family: 'Helvetica', 'Verdana', sans-serif;
+  font-family: 'New Century Schoolbook', 'TeX Gyre Schola', 'serif';
   font-weight: 400;
   font-display: optional;
   color: #444;
@@ -442,20 +442,21 @@ body {
 
 
 #overlayLocation {
-      background: rgba(206, 201, 201, 0.87);
-      visibility: hidden;
-      position: fixed;
-      left: 10%;
-      top: 20%;
-  
-      text-align:center;
-      z-index: 1000;
-      margin: 0;
-      -webkit-box-flex: 1;
-      -webkit-flex: 1;
-          -ms-flex: 1;
-              flex: 1; }
-             
+  background: rgba(206, 201, 201, 0.87);
+  visibility: hidden;
+  position: fixed;
+  left: 5%;
+  top: 5%;
+  width:90%;
+  height:90%;
+  text-align:center;
+  z-index: 1000;
+  margin: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
+
  
 
 .overlayLocation #butBack{
@@ -635,16 +636,21 @@ background: url(/images/reply.svg) center center no-repeat; }
 
 .overlayDienstag #butBack{
 background: url(/images/reply.svg) center center no-repeat; }
+
+
+
+
 /*******************Notes********************************/
 #page-wrapper {
-  width: 550px;
-  margin: 2.5em auto;
+  width: 95%;
+ margin: 2.5em auto;
   background: #FFF;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   border-radius: 3px;
 }
 
 #new-todo-form {
+ 
   padding: 0.5em;
   background: #3f51b5;
   border-top-left-radius: 3px;
@@ -652,25 +658,27 @@ background: url(/images/reply.svg) center center no-repeat; }
 }
 
 #new-todo {
-  width: 100%;
-  padding: 0.5em;
-  font-size: 1em;
+  width: 95%;
+ padding: 0.5em;
+  font-size: 1em; 
   border-radius: 3px;
   border: 0;
 }
 
 #todo-items {
+height: 95%;
   list-style: none;
-  padding: 0.5em 1em;
+ padding: 0.5em 1em; 
   margin: 0;
 }
 
 #todo-items li {
-  font-size: 0.9em;
-  padding: 0.5em;
+ 
+
+  padding: 0.5em; 
   background: #FFF;
   border-bottom: 1px solid #EEE;
-  margin: 0.5em 0;
+
 }
 
 input[type="checkbox"] {
