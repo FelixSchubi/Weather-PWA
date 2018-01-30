@@ -10,9 +10,10 @@ PWA "https://developers.google.com/web/progressive-web-apps/"
 
 ## Table of Contents
 
-  - [Start](#start)
-  - [Konsole für Android Browser](#konsole-für-android-browser)
   - [Grundlage](#grundlage)
+  - [Android Devices](#android-devices)
+  - [iOS Devices](#ios-devices)
+  - [Konsole für Android Browser](#konsole-für-android-browser)
   - [Offlinefähigkeit](#offlinefähigkeit)
   - [Bilder Offline Speichern](#bilder-offline-speichern)
   - [Offline Notizen](#offline-notizen)
@@ -21,7 +22,16 @@ PWA "https://developers.google.com/web/progressive-web-apps/"
   - [Handbuch](#handbuch)
   - [Nativefier](#nativefier)
   
-## Start
+  
+## Grundlage
+
+Als Grundlage für das gesamte Projekt wird ein Beispiel aus den Code Labs von Google benutzt.
+Und zwar das Projekt: 
+Your First Progressive Web App
+- https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/
+Nach der Erstellung der App und die Einarbeitung in HTML5 und JavaScript wurde mit der ausgiebigeren Recherche zum Thema Progressive Web Apps begonnen.
+  
+## Android Devices
 
 
 Zur Evaluierung wird das Programm Genymotion verwendet:
@@ -44,6 +54,16 @@ Bei manchen Geräten ist der PlayStore mit dabei!
 - https://www.apkmirror.com/
 → http://www.giga.de/apps/android/specials/apk-mirror-serioeser-download-von-android-apps/
 
+## iOS Devices:
+```bash
+Ob das Verfahren funktioniert muss erst getestet werden
+"http://www.anexinet.com/blog/install-app-ios-simulator/"
+```
+Hier wird erklärt, wie man Apps in xCode-Emulatoren installieren kann.
+Das ist wichtig, da der AppStore nicht installiert ist und man nur so die Möglichkeit bekommt
+eine PWA mit sämtlichen Browsern zu testen.
+Eventuell auch nächster [Schriit](#konsole-für-android-browser) realisierbar??? 
+
 ## Konsole für Android Browser
 
 Um eine Konsole für einen Android Browser zu erhalten wird die Möglichkeit von Google Chrome, das Remote-Debugging, verwendet. 
@@ -57,14 +77,6 @@ Um dies zu nutzen sind folgende Schritte notwendig:
 4. GoogleChrome am Rechner Starten
 5. -> In den Entwicklertools den Punkt "remote devices" öffnen 
 6. Nun besteht die Möglichkeit die Konsole vom Android Gerät am Rechner abzulesen
-
-## Grundlage
-
-Als Grundlage für das gesamte Projekt wird ein Beispiel aus den Code Labs von Google benutzt.
-Und zwar das Projekt: 
-Your First Progressive Web App
-- https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/
-Nach der Erstellung der App und die Einarbeitung in HTML5 und JavaScript wurde mit der ausgiebigeren Recherche zum Thema Progressive Web Apps begonnen.
 
 ## Offlinefähigkeit
 
