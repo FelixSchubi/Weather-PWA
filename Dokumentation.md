@@ -59,9 +59,9 @@ Bei manchen Geräten ist der PlayStore mit dabei!
 Ob das Verfahren funktioniert muss erst getestet werden
 "http://www.anexinet.com/blog/install-app-ios-simulator/"
 ```
-Hier wird erklärt, wie man Apps in xCode-Emulatoren installieren kann.
+Hier wird erklärt, wie man Apps in xCode-Emulatoren installieren kann. <br/>
 Das ist wichtig, da der AppStore nicht installiert ist und man nur so die Möglichkeit bekommt
-eine PWA mit sämtlichen Browsern zu testen.
+eine PWA mit sämtlichen Browsern zu testen.<br/>
 Eventuell auch nächster [Schriit](#konsole-für-android-browser) realisierbar??? 
 
 ## Konsole für Android Browser
