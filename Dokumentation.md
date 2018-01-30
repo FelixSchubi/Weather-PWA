@@ -54,6 +54,11 @@ Bei manchen Geräten ist der PlayStore mit dabei!
 - https://www.apkmirror.com/
 → http://www.giga.de/apps/android/specials/apk-mirror-serioeser-download-von-android-apps/
 
+### [Ergebnis](Android)
+Bei bisher allen getesteten Browsern war es möglich die Offlinefähigkeit zu nutzen, sowie ein Shortcut für den Homescreen zu erstellen.</br>
+//Da die eigens entwickelte PWA noch nicht über HTTPS verfügbar ist wurde derweil [Pokedex.org](www.pokedex.org) verwendet.
+
+
 ## iOS Devices:
 ```bash
 Ob das Verfahren funktioniert muss erst getestet werden
