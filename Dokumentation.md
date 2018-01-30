@@ -56,7 +56,7 @@ Bei manchen Geräten ist der PlayStore mit dabei!
 
 ### [Ergebnis](Android)
 Bei bisher allen getesteten Browsern war es möglich die Offlinefähigkeit zu nutzen, sowie ein Shortcut für den Homescreen zu erstellen.</br>
-//Da die eigens entwickelte PWA noch nicht über HTTPS verfügbar ist wurde derweil [Pokedex.org](www.pokedex.org) verwendet.
+//Da die eigens entwickelte PWA noch nicht über HTTPS verfügbar ist wurde derweil www.pokedex.org verwendet.
 
 
 ## iOS Devices:
