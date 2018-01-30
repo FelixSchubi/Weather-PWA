@@ -1,4 +1,4 @@
-# Evaluierung von PWA‘s 
+## Evaluierung von PWAs 
 
 
 <img src="images/pwa-reliable.png" alt="PWA-reliable" width="800" height="250">
@@ -144,4 +144,4 @@ Bei GoogleChrome besteht die Möglichkeit, ein App-Shortcut am Desktop anzulegen
 - https://github.com/jiahaog/nativefier <br/>
 
 
-
+   <h3>[Zum Anfang↑](#evaluierung-von-pwas)</h3>
