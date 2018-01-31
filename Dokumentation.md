@@ -1,7 +1,7 @@
 ## Evaluierung von PWAs 
 
 
-<img src="images/pwa-reliable.png" alt="PWA-reliable" width="800" height="250">
+<img src="images/pwa-reliable.png" alt="PWA-reliable" width="800" height="350">
 
 
 ```bash
@@ -54,7 +54,7 @@ Bei manchen Geräten ist der PlayStore mit dabei!
 - https://www.apkmirror.com/
 → http://www.giga.de/apps/android/specials/apk-mirror-serioeser-download-von-android-apps/
 
-### [Ergebnis](Android)
+### [Ergebnis Android](Android)
 Bei bisher allen getesteten Browsern war es möglich die Offlinefähigkeit zu nutzen, sowie ein Shortcut für den Homescreen zu erstellen.</br>
 //Da die eigens entwickelte PWA noch nicht über HTTPS verfügbar ist wurde derweil www.pokedex.org verwendet.
 
@@ -69,7 +69,17 @@ Das ist wichtig, da der AppStore nicht installiert ist und man nur so die Mögli
 eine PWA mit sämtlichen Browsern zu testen.<br/>
 Eventuell auch nächster [Schrit](#konsole-für-android-browser) realisierbar??? <br/>
 Woher sollen die Apps bezogen werden?? <br/>
-https://apple.stackexchange.com/questions/298391/how-do-i-download-an-ios-app-ipa-file-to-my-mac-after-itunes-12-7-update?? <br/>
+Seit einem neuen Update von iTunes auf die Version 12.7 ist es nicht mehr möglich Apps aus dem iTunes Store zu beziehen. Deshalb musste man zuerst auf eine ältere Version downgraden. <br/>
+- http://www.computerbild.de/artikel/cb-News-Software-Downgrade-iTunes-12.6.3-bringt-den-App-Store-zurueck-19146571.html
+- https://support.apple.com/en-gb/HT208079
+
+### Problem
+
+Die Apps lassen sich wie oben im Link beschrieben installieren, jedoch starten die Anwedungen nur ganz kurz und stürzen dann wieder ab. 
+
+### [Ergebnis iOS](iOS)
+Bisher konnte nur bei mit Safari getestet werden. Hierbei verlief aber alles gut.</br>
+//Da die eigens entwickelte PWA noch nicht über HTTPS verfügbar ist wurde derweil www.pokedex.org verwendet.
 
 
 ## Konsole für Android Browser
