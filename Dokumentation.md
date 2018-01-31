@@ -77,7 +77,10 @@ Seit einem neuen Update von iTunes auf die Version 12.7 ist es nicht mehr mögli
 Die Apps lassen sich wie oben im Link beschrieben installieren, jedoch starten die Anwedungen nur ganz kurz und stürzen dann wieder ab. 
 
 ### [Ergebnis iOS](iOS)
-Bisher konnte nur bei mit Safari getestet werden. Hierbei verlief aber alles gut.</br>
+Bei der Evaluierung mit dem Apple eigenen Browser Safari waren Funktionen verfügbar.</br>
+Durch ein etwas komplexeres Verfahren war es schlussendlich auch möglich Firefox auf dem Gerät zu installieren. <br/>
+- https://github.com/mozilla-mobile/firefox-ios <br/>
+Bei dieser Version hat man jedoch nicht die Möglichkeit ein Shortcut zum Startbildschirm hinzuzufügen.
 //Da die eigens entwickelte PWA noch nicht über HTTPS verfügbar ist wurde derweil www.pokedex.org verwendet.
 
 
