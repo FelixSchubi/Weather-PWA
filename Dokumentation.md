@@ -68,7 +68,6 @@ Hier wird erklärt, wie man Apps in xCode-Emulatoren installieren kann. <br/>
 Das ist wichtig, da der AppStore nicht installiert ist und man nur so die Möglichkeit bekommt
 eine PWA mit sämtlichen Browsern zu testen.<br/>
 Eventuell auch nächster [Schrit](#konsole-für-android-browser) realisierbar??? <br/>
-Woher sollen die Apps bezogen werden?? <br/>
 Seit einem neuen Update von iTunes auf die Version 12.7 ist es nicht mehr möglich Apps aus dem iTunes Store zu beziehen. Deshalb musste man zuerst auf eine ältere Version downgraden. <br/>
 - http://www.computerbild.de/artikel/cb-News-Software-Downgrade-iTunes-12.6.3-bringt-den-App-Store-zurueck-19146571.html
 - https://support.apple.com/en-gb/HT208079
