@@ -67,7 +67,10 @@ Ob das Verfahren funktioniert muss erst getestet werden
 Hier wird erklärt, wie man Apps in xCode-Emulatoren installieren kann. <br/>
 Das ist wichtig, da der AppStore nicht installiert ist und man nur so die Möglichkeit bekommt
 eine PWA mit sämtlichen Browsern zu testen.<br/>
-Eventuell auch nächster [Schriit](#konsole-für-android-browser) realisierbar??? 
+Eventuell auch nächster [Schrit](#konsole-für-android-browser) realisierbar??? <br/>
+Woher sollen die Apps bezogen werden?? <br/>
+https://apple.stackexchange.com/questions/298391/how-do-i-download-an-ios-app-ipa-file-to-my-mac-after-itunes-12-7-update?? <br/>
+
 
 ## Konsole für Android Browser
 
