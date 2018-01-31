@@ -80,7 +80,8 @@ Die Apps lassen sich wie oben im Link beschrieben installieren, jedoch starten d
 Bei der Evaluierung mit dem Apple eigenen Browser Safari waren Funktionen verfügbar.</br>
 Durch ein etwas komplexeres Verfahren war es schlussendlich auch möglich Firefox auf dem Gerät zu installieren. <br/>
 - https://github.com/mozilla-mobile/firefox-ios <br/>
-Bei dieser Version hat man jedoch nicht die Möglichkeit ein Shortcut zum Startbildschirm hinzuzufügen.
+Bei dieser Version hat man jedoch nicht die Möglichkeit ein Shortcut zum Startbildschirm hinzuzufügen. <br/>
+
 //Da die eigens entwickelte PWA noch nicht über HTTPS verfügbar ist wurde derweil www.pokedex.org verwendet.
 
 
