@@ -117,7 +117,7 @@ Bei der Evaluierung für Android Geräte stellte sich jedoch heraus, dass diese 
 ## Bilder Offline Speichern
 
 Daraufhin musste auf eine andere zurückgegriffen werden. Nämlich IndexedDB:
-- https://developer.mozilla.org/de/docs/IndexedDB
+- https://developer.mozilla.org/de/docs/IndexedDB <br/>
 Ein Beispiel für ein ähnliches Vorhaben zeigt Robert Nyman:
 - https://hacks.mozilla.org/2012/02/storing-images-and-files-in-indexeddb/
 		
