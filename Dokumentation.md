@@ -28,7 +28,7 @@ PWA "https://developers.google.com/web/progressive-web-apps/"
 Als Grundlage für das gesamte Projekt wird ein Beispiel aus den Code Labs von Google benutzt.
 Und zwar das Projekt: 
 Your First Progressive Web App
-- https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/
+- https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/ <br/>
 Nach der Erstellung der App und die Einarbeitung in HTML5 und JavaScript wurde mit der ausgiebigeren Recherche zum Thema Progressive Web Apps begonnen.
   
 ## Android Devices
