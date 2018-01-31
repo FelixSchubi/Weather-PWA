@@ -84,7 +84,7 @@ Bisher konnte nur bei mit Safari getestet werden. Hierbei verlief aber alles gut
 ## Konsole für Android Browser
 
 Um eine Konsole für einen Android Browser zu erhalten wird die Möglichkeit von Google Chrome, das Remote-Debugging, verwendet. 
-- https://developers.google.com/web/tools/chrome-devtools/remote-debugging/?utm_source=dcc&utm_medium=redirect&utm_campaign=2016q3
+- https://developers.google.com/web/tools/chrome-devtools/remote-debugging/?utm_source=dcc&utm_medium=redirect&utm_campaign=2016q3 <br/>
 Um dies zu nutzen sind folgende Schritte notwendig:
 
 1. Im Emulator den DeveloperModus Aktivieren 
