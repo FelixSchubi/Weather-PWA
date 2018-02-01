@@ -76,11 +76,21 @@ Seit einem neuen Update von iTunes auf die Version 12.7 ist es nicht mehr mögli
 
 Die Apps lassen sich wie oben im Link beschrieben installieren, jedoch starten die Anwedungen nur ganz kurz und stürzen dann wieder ab. 
 
-Zitat Glyn Williams:
+```bash
+APPLE:
+Note: You cannot install apps from the App Store in simulation environments.
+```
+- https://developer.apple.com/library/content/documentation/IDEs/Conceptual/iOS_Simulator_Guide/InteractingwiththeiOSSimulator/InteractingwiththeiOSSimulator.html#//apple_ref/doc/uid/TP40012848-CH3-SW8
+- https://forums.developer.apple.com/thread/20257
 
 ```bash
+Zitat Glyn Williams:
 The iOS simulator is a version of iOS running in x86 (Intel) machine language.  Apps on the app store are ARM code.
 ```
+- https://www.quora.com/Is-it-possible-to-install-iOS-apps-to-Xcode-built-in-iOS-simulator
+
+
+
 
 ### [Ergebnis iOS](iOS)
 Bei der Evaluierung mit dem Apple eigenen Browser Safari waren Funktionen verfügbar.</br>
