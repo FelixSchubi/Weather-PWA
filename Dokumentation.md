@@ -93,7 +93,9 @@ The iOS simulator is a version of iOS running in x86 (Intel) machine language.  
 
 
 ### [Ergebnis iOS](iOS)
-Bei der Evaluierung mit dem Apple eigenen Browser Safari waren Funktionen verfügbar.</br>
+Bei der Evaluierung mit dem Apple eigenen Browser Safari waren alle Funktionen verfügbar.</br>
+- https://developer.apple.com/library/content/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_0.html 
+
 Durch ein etwas komplexeres Verfahren war es schlussendlich auch möglich verschiedene Versionen von Firefox auf dem Gerät zu installieren. <br/>
 - https://github.com/mozilla-mobile/firefox-ios <br/>
 Man jedoch bei keiner die Möglichkeit ein Shortcut zum Startbildschirm hinzuzufügen. <br/>
