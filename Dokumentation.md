@@ -61,6 +61,10 @@ Bei bisher allen getesteten Browsern war es möglich die Offlinefähigkeit zu nu
 
 ## iOS Devices:
 ```bash
+<img src="/images/Apple_Chart.png" alt="Apple_Chart" width="800" height="350">
+```
+
+```bash
 Ob das Verfahren funktioniert muss erst getestet werden
 "http://www.anexinet.com/blog/install-app-ios-simulator/"
 ```
