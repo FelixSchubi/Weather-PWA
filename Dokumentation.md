@@ -61,7 +61,8 @@ Bei bisher allen getesteten Browsern war es möglich die Offlinefähigkeit zu nu
 
 ## iOS Devices:
 
-<img src="/images/Apple_Chart.png" alt="Apple_Chart" width="800" height="350">
+<img src="/images/Apple_Chart.png" alt="Apple_Chart" width="800" height="350"> <br/>
+- http://www.businessinsider.de/the-iphone-x-has-a-higher-adoption-rate-than-the-iphone-8-and-iphone-8-plus-2017-12?r=UK&IR=T
 
 
 ```bash
