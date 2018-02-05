@@ -113,6 +113,8 @@ Mit den iOS Versionen 10 und 11 sind 93% des Marktes abgedeckt, weshalb sich auf
 
 Ünterstützte Geräte: <br/>
 <img src="/images/iOS_Geräte.png" alt="iOS_Geräte" width="250" height="250"> <br/>
+- http://www.iphone-magazin.eu/ios-10-diese-geraete-bekommen-das-update/
+- https://www.stern.de/digital/smartphones/ios-11--fuer-diese-apple-geraete-kommt-das-neue-system-7482156.html
 
 
 -> Bis iOS 6.1.6 ist es zwar möglich ein Shortcut auf dem Homescreen zu erstellen, es kann jedoch nicht die API IndexedDB verwendet werden. !!Fehlende Unterstützung (Gerät zu Alt)!!
