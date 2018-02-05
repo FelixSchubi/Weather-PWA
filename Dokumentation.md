@@ -77,6 +77,8 @@ Seit einem neuen Update von iTunes auf die Version 12.7 ist es nicht mehr mögli
 - http://www.computerbild.de/artikel/cb-News-Software-Downgrade-iTunes-12.6.3-bringt-den-App-Store-zurueck-19146571.html
 - https://support.apple.com/en-gb/HT208079
 
+
+
 ### Problem
 
 Die Apps lassen sich wie oben im Link beschrieben installieren, jedoch starten die Anwedungen nur ganz kurz und stürzen dann wieder ab. 
@@ -94,6 +96,14 @@ The iOS simulator is a version of iOS running in x86 (Intel) machine language.  
 ```
 - https://www.quora.com/Is-it-possible-to-install-iOS-apps-to-Xcode-built-in-iOS-simulator
 
+
+### Lösung
+
+
+Um trotzdem zu einem Ergbnis zu kommen wird im folgenden ein Orginalgerät verwendet!
+```bash
+folgt
+```
 
 
 
