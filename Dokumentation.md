@@ -109,6 +109,7 @@ folgt
 
 
 
+Mit den iOS Versionen 10 und 11 sind 93% des Marktes abgedeckt, weshalb sich auf diese konzentriert werden soll!
 
 -> Bis iOS 6.1.6 ist es zwar möglich ein Shortcut auf dem Homescreen zu erstellen, es kann jedoch nicht die API IndexedDB verwendet werden. !!Fehlende Unterstützung (Gerät zu Alt)!!
 Um neuere iOS Versionen zu testen muss ein neues Gerät angeschafft werden.
