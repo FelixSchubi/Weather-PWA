@@ -169,6 +169,7 @@ Daraufhin musste auf eine andere zurückgegriffen werden. Nämlich IndexedDB:
 - https://developer.mozilla.org/de/docs/IndexedDB <br/>
 
 <img src="/images/IndexedDB.png" alt="IndexedDB" width="2248" height="600"> <br/> 
+- https://caniuse.com/#feat=indexeddb
 
 
 Ein Beispiel für ein ähnliches Vorhaben zeigt Robert Nyman:
