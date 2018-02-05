@@ -104,6 +104,12 @@ Um trotzdem zu einem Ergbnis zu kommen wird im folgenden ein Orginalgerät verwe
 ```bash
 folgt
 ```
+
+<img src="/images/iOS_Versionen" alt="iOS_Versionen" width="350" height="600"> <br/>
+
+
+
+
 -> Bis iOS 6.1.6 ist es zwar möglich ein Shortcut auf dem Homescreen zu erstellen, es kann jedoch nicht die API IndexedDB verwendet werden. !!Fehlende Unterstützung (Gerät zu Alt)!!
 Um neuere iOS Versionen zu testen muss ein neues Gerät angeschafft werden.
 
