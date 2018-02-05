@@ -155,6 +155,12 @@ Ein weiterer Schritt war nun die maximalen Speichergrenzen zu finden.
 Eine Übersicht dieser und eine Möglichkeit sie für jedes Gerät und jeden Browser individuell zu testen findet man unter:
 - https://www.html5rocks.com/en/tutorials/offline/quota-research/
 
+<img src="/images/IndexedDB_Storage.png" alt="IndexedDB_Storage" width="800" height="270"> <br/>
+
+- https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/offline-for-pwa
+
+
+
 Nun wurde das fertige Projekt von Google dazu verwendet, um weitere API's mit einer solchen Progressive Web App zu testen.
 
 Das erste Vorhaben war es, eine Möglichkeit für den Nutzer zu Programmieren, die es ermöglicht Bilder aufzunehmen und diese Offline zu Speichern.
