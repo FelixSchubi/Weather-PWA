@@ -4,6 +4,11 @@
 <img src="images/pwa-reliable.png" alt="PWA-reliable" width="800" height="350">
 
 
+Instant Loading: Building offline-first Progressive Web Apps - Google I/O 2016
+
+!!! https://www.youtube.com/watch?v=cmGr0RszHc8 !!!
+
+
 ```bash
 PWA "https://developers.google.com/web/progressive-web-apps/"
 ```
