@@ -105,7 +105,7 @@ Um trotzdem zu einem Ergbnis zu kommen wird im folgenden ein Orginalgerät verwe
 folgt
 ```
 
-<img src="/images/iOS_Versionen" alt="iOS_Versionen" width="350" height="600"> <br/>
+<img src="/images/iOS_Versionen.jpg" alt="iOS_Versionen" width="250" height="250"> <br/>
 
 
 
