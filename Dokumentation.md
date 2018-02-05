@@ -6,7 +6,9 @@
 
 Instant Loading: Building offline-first Progressive Web Apps - Google I/O 2016
 
-!!! https://www.youtube.com/watch?v=cmGr0RszHc8 !!!
+!!! https://www.youtube.com/watch?v=cmGr0RszHc8 !!! <br/>
+https://www.udacity.com/course/offline-web-applications--ud899?autoenroll=true :) <br/>
+
 
 
 ```bash
@@ -232,6 +234,7 @@ Bei GoogleChrome besteht die Möglichkeit, ein App-Shortcut am Desktop anzulegen
 ### TODO
 Eventuell ausprobieren:
 - http://www.peterfriese.de/how-to-use-the-gyroscope-of-your-iphone-in-a-mobile-web-app/
+<br/>
 
 ```bash
 [Zum Anfang↑](#evaluierung-von-pwas)
