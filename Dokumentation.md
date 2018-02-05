@@ -223,6 +223,11 @@ Eventuell neue Möglichkeiten zur Evaluierung? IOS-Devices??
 Dadurch hat man nun die Möglichkeit eine WebApp für Desktop-Rechner zu erstellen. Hierbei spielt es keine Rolle welcher Browser installiert ist.
 Bei GoogleChrome besteht die Möglichkeit, ein App-Shortcut am Desktop anzulegen und dieses zu nutzen. Bei Firefox sucht man diese Funktion leider noch vergebens.  
 - https://github.com/jiahaog/nativefier <br/><br/>
-   ```bash
+
+### TODO
+Eventuell ausprobieren:
+- http://www.peterfriese.de/how-to-use-the-gyroscope-of-your-iphone-in-a-mobile-web-app/
+
+```bash
 [Zum Anfang↑](#evaluierung-von-pwas)
 ```
