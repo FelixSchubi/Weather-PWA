@@ -168,7 +168,7 @@ Bei der Evaluierung für Android Geräte stellte sich jedoch heraus, dass diese 
 Daraufhin musste auf eine andere zurückgegriffen werden. Nämlich IndexedDB:
 - https://developer.mozilla.org/de/docs/IndexedDB <br/>
 
-<img src="/images/IndexedDB.png" alt="IndexedDB" width="2248" height="1244"> <br/> 
+<img src="/images/IndexedDB.png" alt="IndexedDB" width="2248" height="600"> <br/> 
 
 
 Ein Beispiel für ein ähnliches Vorhaben zeigt Robert Nyman:
