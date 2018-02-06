@@ -237,6 +237,6 @@ Eventuell ausprobieren:
 - http://www.peterfriese.de/how-to-use-the-gyroscope-of-your-iphone-in-a-mobile-web-app/
 <br/>
 
-```bash
+
 [Zum Anfang↑](#evaluierung-von-pwas)
-```
+
