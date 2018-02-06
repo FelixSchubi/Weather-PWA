@@ -240,7 +240,7 @@ Eventuell ausprobieren:
 
 ## New Code
 Input von mehreren Bilder und Vorschau vor dem Upload
--http://jsfiddle.net/0GiS0/Yvgc2/
+- http://jsfiddle.net/0GiS0/Yvgc2/
 
 [Zum Anfang↑](#evaluierung-von-pwas)
 
