@@ -29,6 +29,7 @@ PWA "https://developers.google.com/web/progressive-web-apps/"
   - [Pluralsight](#pluralsight)
   - [Handbuch](#handbuch)
   - [Nativefier](#nativefier)
+  - [New Code](#new-code)
   
   
 ## Grundlage
@@ -237,6 +238,9 @@ Eventuell ausprobieren:
 - http://www.peterfriese.de/how-to-use-the-gyroscope-of-your-iphone-in-a-mobile-web-app/
 <br/>
 
+## New Code
+Input von mehreren Bilder und Vorschau vor dem Upload
+-http://jsfiddle.net/0GiS0/Yvgc2/
 
 [Zum Anfang↑](#evaluierung-von-pwas)
 
