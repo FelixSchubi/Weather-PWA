@@ -241,7 +241,8 @@ Bei GoogleChrome besteht die Möglichkeit, ein App-Shortcut am Desktop anzulegen
 
 ### New Code
 Input von mehreren Bilder und Vorschau vor dem Upload
-- http://jsfiddle.net/0GiS0/Yvgc2/ <br/>
+- http://jsfiddle.net/0GiS0/Yvgc2/
+
 HTML5 Accelerometer (JS window.DeviceMotionEvent API)
 - https://codepen.io/lehollandaisvolant/pen/prgZyB <br/>
 
