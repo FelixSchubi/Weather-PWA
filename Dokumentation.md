@@ -233,15 +233,18 @@ Dadurch hat man nun die Möglichkeit eine WebApp für Desktop-Rechner zu erstell
 Bei GoogleChrome besteht die Möglichkeit, ein App-Shortcut am Desktop anzulegen und dieses zu nutzen. Bei Firefox sucht man diese Funktion leider noch vergebens.  
 - https://github.com/jiahaog/nativefier <br/><br/>
 
+
+
 ## TODO
-Eventuell ausprobieren:
-- http://www.peterfriese.de/how-to-use-the-gyroscope-of-your-iphone-in-a-mobile-web-app/
 - https://developers.google.com/web/fundamentals/codelabs/push-notifications/
 <br/>
 
 ### New Code
 Input von mehreren Bilder und Vorschau vor dem Upload
-- http://jsfiddle.net/0GiS0/Yvgc2/
+- http://jsfiddle.net/0GiS0/Yvgc2/ <br/>
+HTML5 Accelerometer (JS window.DeviceMotionEvent API)
+- https://codepen.io/lehollandaisvolant/pen/prgZyB <br/>
+
 
 [Zum Anfang↑](#evaluierung-von-pwas)
 
