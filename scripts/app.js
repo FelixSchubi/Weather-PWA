@@ -1,6 +1,54 @@
-window.indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.OIndexedDB || window.msIndexedDB,
-IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.OIDBTransaction || window.msIDBTransaction,
-dbVersion = 1;
+
+  
+  // IndexedDB
+  var indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.OIndexedDB || window.msIndexedDB,
+  IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.OIDBTransaction || window.msIDBTransaction,
+  dbVersion = 1.0;
+
+
+
+
+
+/**************  Gyroskop ***********/
+
+ document.getElementById("butBilder").addEventListener("click",initACC);
+
+ function initACC(){
+   console.log("initACC läuft..")
+if (window.DeviceMotionEvent == undefined) {
+	//No accelerometer is present. Use buttons. 
+	document.querySelector("#acc").textContent = "NO";
+	document.querySelector("#acc").className = "no";
+
+}
+else {
+	document.querySelector("#acc").textContent = "YES";
+	document.querySelector("#acc").className = "yes";
+	window.addEventListener("devicemotion", accelerometerUpdate, true);
+}
+
+
+function accelerometerUpdate(event) {
+   var aX = event.accelerationIncludingGravity.x*10;
+   var aY = event.accelerationIncludingGravity.y*10;
+   var aZ = event.accelerationIncludingGravity.z*10;
+
+	document.querySelector("#x").value = aX;
+	document.querySelector("#y").value = aY;
+	document.querySelector("#z").value = aZ;
+
+	// ix aY is negative, switch rotation
+	if (aY <0) {
+		aX = -aX - 180;
+	}
+	document.querySelector("#block").style.transform="rotate("+aX+"deg)";
+
+}
+
+ }
+/*******************Gyroskop Ende */
+
+
 
 // Bild Auswählen und Vorschau
 
@@ -9,12 +57,315 @@ var loadFile = function(event) {
   output.src = URL.createObjectURL(event.target.files[0]);
 };
 
-var loadFileDIE = function(event) {
-  var outputDIE = document.getElementById('output');
-  output.src = URL.createObjectURL(event.target.files[0]);
+/*********Dienstag mit Localforage speichern!! */
+
+document.getElementById("files").addEventListener("click",loadTuesday);
+
+
+function loadTuesday(){
+        
+  //Check File API support
+  if(window.File && window.FileList && window.FileReader)
+  {
+      var filesInput = document.getElementById("files");
+      
+      filesInput.addEventListener("change", function(event){
+          
+          var files = event.target.files; //FileList object
+          var output = document.getElementById("result");
+          
+          for(var i = 0; i< files.length; i++)
+          {
+              var tue = files[i];
+              
+              var tueU = document.getElementById("output");
+              tueU.src = URL.createObjectURL(files[i]);
+              console.log(tueU)
+              
+              
+
+              IndexSave(tueU, i);    
+              
+                
+              
+              //Only pics
+              if(!tue.type.match('image'))
+                continue;
+              
+              var picReader = new FileReader();
+              
+              picReader.addEventListener("load",function(event){
+                  
+                  var picFile = event.target;
+
+
+                  
+                  var div = document.createElement("div");
+                  
+                  div.innerHTML = "<img class='thumbnail' src='" + picFile.result + "'" +
+                          "title='" + picFile.name + "'/>";
+                  
+                  output.insertBefore(div,null);            
+              
+              });
+              
+               //Read the image
+              picReader.readAsDataURL(tue);
+              console.log(tue);
+
+          
+            }    
+                                    
+         
+      });
+  }
+  else
+  {
+      console.log("Your browser does not support File API");
+  }
+}
+
+
+
+function IndexSave (bild, count)
+{
+  
+      
+      // IndexedDB
+      var indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.OIndexedDB || window.msIndexedDB,
+          IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.OIDBTransaction || window.msIDBTransaction,
+          dbVersion = 1.0;
+  
+          var indexedDB = window.indexedDB || window.webkitIndexedDB || window.msIndexedDB;
+          var IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange;
+          var openCopy = indexedDB && indexedDB.open;
+          
+          var IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction;
+          
+          if (IDBTransaction)
+          {
+          IDBTransaction.READ_WRITE = IDBTransaction.READ_WRITE || 'readwrite';
+          IDBTransaction.READ_ONLY = IDBTransaction.READ_ONLY || 'readonly';
+          };
+  
+      var MasTuesdayURL = bild.src;
+      console.log(MasTuesdayURL);
+  
+  
+  
+      // Create/open database
+      var request = indexedDB.open("Woche", dbVersion),
+          db,
+          createObjectStore = function (dataBase) {
+              // Create an objectStore
+              console.log("Creating objectStore")
+  
+              dataBase.createObjectStore("Bilder");
+          },
+  
+          getImageFile = function () {
+              // Create XHR
+              
+  
+  
+              var xhr = new XMLHttpRequest(),
+                  blob;
+  
+                  
+  
+              xhr.open("GET", MasTuesdayURL, true);
+              // Set the responseType to blob
+              xhr.responseType = "blob";
+  
+              xhr.addEventListener("load", function () {
+                  if (xhr.status === 200) {
+                      console.log("Image retrieved");
+                      
+                      // Blob as response
+                      blob = xhr.response;
+                      console.log("Blob:" + blob);
+  
+                      // Put the received blob into IndexedDB
+                      putTuesdayInDb(blob);
+                  }
+              }, false);
+              // Send XHR
+              xhr.send();
+          },
+  
+          putTuesdayInDb = function (blob) {
+              console.log("Putting Tuesday in IndexedDB");
+  
+              // Open a transaction to the database
+              var transaction = db.transaction(["Bilder"], IDBTransaction.READ_WRITE);
+  
+              // Put the blob into the dabase
+              count= count+ 1;
+
+              var put = transaction.objectStore("Bilder").put(blob, "Bild: " + count);
+  
+       
+       
+          };
+  
+  
+  
+      request.onerror = function (event) {
+          console.log("Error creating/accessing IndexedDB database");
+      };
+  
+      request.onsuccess = function (event) {
+          console.log("Success creating/accessing IndexedDB database");
+          db = request.result;
+  
+          db.onerror = function (event) {
+              console.log("Error creating/accessing IndexedDB database");
+          };
+          
+          // Interim solution for Google Chrome to create an objectStore. Will be deprecated
+          if (db.setVersion) {
+              if (db.version != dbVersion) {
+                  var setVersion = db.setVersion(dbVersion);
+                  setVersion.onsuccess = function () {
+                      createObjectStore(db);
+                      getImageFile();
+                  };
+              }
+              else {
+                  getImageFile();
+              }
+          }
+          else {
+              getImageFile();
+          }
+      }
+
+      
+      // For future use. Currently only in latest Firefox versions
+      request.onupgradeneeded = function (event) {
+          createObjectStore(event.target.result);
+      };
+      
+  };
+
+
+/**********************Dienstag einzeigen */
+
+document.getElementById("ShowTuesday").addEventListener("click",sPictureTue);
+
+
+function sPictureTue () {
+
+
+
+var request = indexedDB.open("Woche", dbVersion),
+db;
+
+
+request.onsuccess = function (event) 
+{
+    console.log("Success creating/accessing IndexedDB database");
+    db = request.result;
+
+
+        
+
+   var transaction = db.transaction(["Bilder"], IDBTransaction.READ);
+   
+
+               transaction.objectStore("Bilder").getAll().onsuccess = function (event) 
+  {
+
+
+  var imgTueFile = event.target.result;
+  var output = document.getElementById("result");
+
+
+  for(var i = 0; i< imgTueFile.length; i++)
+  {
+      var tue = imgTueFile[i];
+      
+      var sTUE = document.getElementById("output");
+      sTUE.src = URL.createObjectURL(imgTueFile[i]);
+      console.log(sTUE)
+
+      //Only pics
+      if(!tue.type.match('image'))
+        continue;
+      
+      var picReader = new FileReader();
+      
+      picReader.addEventListener("load",function(event){
+          
+          var picFile = event.target;
+
+          
+          var div = document.createElement("div");
+          
+          div.innerHTML = "<img class='AusDB' src='" + picFile.result + "'" +
+                  "title='" + picFile.name + "'/>";
+          
+          output.insertBefore(div,null);            
+      
+      });
+      
+       //Read the image
+      picReader.readAsDataURL(tue); 
+      console.log(tue);
+
+  
+    }      
+
+};            
+};                      
 };
 
 
+
+/**********Dienstag Ende ****************/
+
+
+/********************DeleteALL */
+
+document.getElementById("deleteALL").addEventListener("click",DELETE);
+
+function DELETE ()
+{
+
+var DBOpenRequest = window.indexedDB.open("Woche", dbVersion);
+
+DBOpenRequest.onsuccess = function(event) {
+
+  db = DBOpenRequest.result;
+
+  clearData();
+  console.log("Bilder wurden gelöscht");
+  location.reload();
+};
+
+function clearData() {
+
+  var transaction = db.transaction(["Bilder"], "readwrite");
+
+
+  transaction.oncomplete = function(event) {
+
+  };
+
+  transaction.onerror = function(event) {
+
+  };
+
+
+  var objectStore = transaction.objectStore("Bilder");
+
+  var objectStoreRequest = objectStore.clear();
+
+  objectStoreRequest.onsuccess = function(event) {
+
+  };
+};
+}
 
 /*******Notes *******************/
 
@@ -31,7 +382,7 @@ var todoDB = (function() {
     var version = 1;
 
     // Open a connection to the datastore.
-    var request = indexedDB.open('todos', version);
+    var request = indexedDB.open('Notes', version);
 
     // Handle datastore upgrades.
     request.onupgradeneeded = function(e) {
@@ -280,205 +631,10 @@ function overlayNotes() {
 
 /***************Montag einspeichern */
 
-document.getElementById("DeleteMonday").addEventListener("click",delMonday);
-
-
-function delMonday()
-{
-    
-var request = indexedDB.open("Woche", dbVersion),
-db;
-
-request.onsuccess = function (event) {
-    db = request.result;
-
-   var transaction = db.transaction(["Montag"],"readwrite")
-   .objectStore("Montag")
-   .delete("image");
-   console.log("Bild wurde gelöscht");
-
-    location.reload();
-}
-}
-
-
-
-
-
-  document.getElementById("MasterSaMo").addEventListener("click",MasterSaveMo);
-  
- 
-
-    function MasterSaveMo () {
-
-{
-    
-    // IndexedDB
-    var indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.OIndexedDB || window.msIndexedDB,
-        IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.OIDBTransaction || window.msIDBTransaction,
-        dbVersion = 1.0;
-
-        var indexedDB = window.indexedDB || window.webkitIndexedDB || window.msIndexedDB;
-        var IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange;
-        var openCopy = indexedDB && indexedDB.open;
-        
-        var IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction;
-        
-        if (IDBTransaction)
-        {
-        IDBTransaction.READ_WRITE = IDBTransaction.READ_WRITE || 'readwrite';
-        IDBTransaction.READ_ONLY = IDBTransaction.READ_ONLY || 'readonly';
-        };
-
-    var MasMondayURL = document.getElementById("output").src;
-    console.log(MasMondayURL);
-
-
-
-    // Create/open database
-    var request = indexedDB.open("Woche", dbVersion),
-        db,
-        createObjectStore = function (dataBase) {
-            // Create an objectStore
-            console.log("Creating objectStore")
-            dataBase.createObjectStore("Montag");
-            dataBase.createObjectStore("Dienstag");
-        },
-
-        getImageFile = function () {
-            // Create XHR
-            
-
-
-            var xhr = new XMLHttpRequest(),
-                blob;
-
-                
-
-            xhr.open("GET", MasMondayURL, true);
-            // Set the responseType to blob
-            xhr.responseType = "blob";
-
-            xhr.addEventListener("load", function () {
-                if (xhr.status === 200) {
-                    console.log("Image retrieved");
-                    
-                    // Blob as response
-                    blob = xhr.response;
-                    console.log("Blob:" + blob);
-
-                    // Put the received blob into IndexedDB
-                    putMondayInDb(blob);
-                }
-            }, false);
-            // Send XHR
-            xhr.send();
-        },
-
-        putMondayInDb = function (blob) {
-            console.log("Putting Monday in IndexedDB");
-
-            // Open a transaction to the database
-            var transaction = db.transaction(["Montag"], IDBTransaction.READ_WRITE);
-
-            // Put the blob into the dabase
-            var put = transaction.objectStore("Montag").put(blob, "image");
-
-     
-     
-        };
-
-
-
-    request.onerror = function (event) {
-        console.log("Error creating/accessing IndexedDB database");
-    };
-
-    request.onsuccess = function (event) {
-        console.log("Success creating/accessing IndexedDB database");
-        db = request.result;
-
-        db.onerror = function (event) {
-            console.log("Error creating/accessing IndexedDB database");
-        };
-        
-        // Interim solution for Google Chrome to create an objectStore. Will be deprecated
-        if (db.setVersion) {
-            if (db.version != dbVersion) {
-                var setVersion = db.setVersion(dbVersion);
-                setVersion.onsuccess = function () {
-                    createObjectStore(db);
-                    getImageFile();
-                };
-            }
-            else {
-                getImageFile();
-            }
-        }
-        else {
-            getImageFile();
-        }
-    }
-    
-    // For future use. Currently only in latest Firefox versions
-    request.onupgradeneeded = function (event) {
-        createObjectStore(event.target.result);
-    };
-
-}
-
-};
-
 // aus indexeddb herausholen *******************************************
 
 
 
-
-
-
-document.getElementById("ShowPictureMo").addEventListener("click",sPictureMo);
-
-
-function sPictureMo () {
-
-
-
-var request = indexedDB.open("Woche", dbVersion),
-db;
-
-
-request.onsuccess = function (event) {
-    console.log("Success creating/accessing IndexedDB database");
-    db = request.result;
-
-
-        
-
-   var transaction = db.transaction(["Montag"], IDBTransaction.READ);
-   
-               // Put the blob into the dabase
-             //  var put = transaction.objectStore("Monday").put(blob, "image");
-   
-               // Retrieve the file that was just stored
-               transaction.objectStore("Montag").get("image").onsuccess = function (event) {
-                   var imgMoFile = event.target.result;
-                   console.log("Got Monday!" + imgMoFile);
-
-                   var reader = new window.FileReader();
-                reader.readAsDataURL(imgMoFile); 
-                reader.onloadend = function() {
-                            var   MPc = reader.result;                
-                               console.log("base64" + MPc );
-                               document.getElementById('MpcM').src = MPc ;
-                               
-                               
-                              };  
-   
-               };};
-            };
-/******************************************************************* */
-
-               
 
 
 
@@ -500,6 +656,8 @@ request.onsuccess = function (event) {
     cameraDialog: document.querySelector('.camera-container'),
     BilderDialog: document.querySelector('.Bilder-Conatiner'),
     daysOfWeek: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  
+
   };
 
 
@@ -802,9 +960,9 @@ request.onsuccess = function (event) {
    * discussion.
    */
   var initialWeatherForecast = {
-    key: '676757',
-    label: 'München, DE',
-    created: '2016-07-22T01:00:00Z',
+    key: '673641',
+    label: 'Mammendorf, DE',
+    created: '2018-05-02T01:00:00Z',
     channel: {
       astronomy: {
         sunrise: "5:43 am",
@@ -835,6 +993,10 @@ request.onsuccess = function (event) {
         direction: 195
       }
     }
+  };
+
+  var blank = {
+   
   };
   // TODO uncomment line below to test app with fake data
   // app.updateForecastCard(initialWeatherForecast);
@@ -888,6 +1050,7 @@ request.onsuccess = function (event) {
       {key: initialWeatherForecast.key, label: initialWeatherForecast.label}
     ];
     app.saveSelectedCities();
+
   }
 
 
@@ -907,6 +1070,12 @@ request.onsuccess = function (event) {
 
 
 })();
+
+
+
+
+
+
 
 
 
