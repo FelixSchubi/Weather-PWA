@@ -245,6 +245,9 @@ Input von mehreren Bilder und Vorschau vor dem Upload
 
 HTML5 Accelerometer (JS window.DeviceMotionEvent API)
 - https://codepen.io/lehollandaisvolant/pen/prgZyB <br/>
+<br/>
+
+Es ist jetzt möglich beliebig viele Bilder Offline zu Speichern und anschließend wiederzugeben
 
 
 [Zum Anfang↑](#evaluierung-von-pwas)
