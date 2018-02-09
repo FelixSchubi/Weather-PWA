@@ -102,8 +102,8 @@ function loadTuesday(){
                   
                   var div = document.createElement("div");
                   
-                  div.innerHTML = "<img class='thumbnail' src='" + picFile.result + "'" +
-                          "title='" + picFile.name + "'/>";
+                  div.innerHTML = "<img class='picture' id='iPIC' src='" + picFile.result + "'" +
+                  "title='" + picFile.name + "'/>";
                   
                   output.insertBefore(div,null);            
               
@@ -111,8 +111,13 @@ function loadTuesday(){
               
                //Read the image
               picReader.readAsDataURL(tue);
-              console.log(tue);
+             
+              var tmp = i +1;
 
+              console.log("Bild" + tmp );
+              console.log(tue);
+              
+              
           
             }    
                                     
@@ -158,7 +163,7 @@ function IndexSave (bild, count)
           db,
           createObjectStore = function (dataBase) {
               // Create an objectStore
-              console.log("Creating objectStore")
+          
   
               dataBase.createObjectStore("Bilder");
           },
@@ -179,11 +184,11 @@ function IndexSave (bild, count)
   
               xhr.addEventListener("load", function () {
                   if (xhr.status === 200) {
-                      console.log("Image retrieved");
+               
                       
                       // Blob as response
                       blob = xhr.response;
-                      console.log("Blob:" + blob);
+                   
   
                       // Put the received blob into IndexedDB
                       putTuesdayInDb(blob);
@@ -194,7 +199,7 @@ function IndexSave (bild, count)
           },
   
           putTuesdayInDb = function (blob) {
-              console.log("Putting Tuesday in IndexedDB");
+            
   
               // Open a transaction to the database
               var transaction = db.transaction(["Bilder"], IDBTransaction.READ_WRITE);
@@ -211,15 +216,15 @@ function IndexSave (bild, count)
   
   
       request.onerror = function (event) {
-          console.log("Error creating/accessing IndexedDB database");
+     
       };
   
       request.onsuccess = function (event) {
-          console.log("Success creating/accessing IndexedDB database");
+      
           db = request.result;
   
           db.onerror = function (event) {
-              console.log("Error creating/accessing IndexedDB database");
+      
           };
           
           // Interim solution for Google Chrome to create an objectStore. Will be deprecated
@@ -287,7 +292,7 @@ request.onsuccess = function (event)
       
       var sTUE = document.getElementById("output");
       sTUE.src = URL.createObjectURL(imgTueFile[i]);
-      console.log(sTUE)
+
 
       //Only pics
       if(!tue.type.match('image'))
@@ -302,7 +307,7 @@ request.onsuccess = function (event)
           
           var div = document.createElement("div");
           
-          div.innerHTML = "<img class='AusDB' src='" + picFile.result + "'" +
+          div.innerHTML = "<img class='picture' id='iPIC' src='" + picFile.result + "'" +
                   "title='" + picFile.name + "'/>";
           
           output.insertBefore(div,null);            
@@ -344,6 +349,7 @@ DBOpenRequest.onsuccess = function(event) {
 };
 
 function clearData() {
+  
 
   var transaction = db.transaction(["Bilder"], "readwrite");
 
@@ -998,19 +1004,7 @@ function overlayNotes() {
   var blank = {
    
   };
-  // TODO uncomment line below to test app with fake data
-  // app.updateForecastCard(initialWeatherForecast);
 
-/************************************************************************
-   *
-   * Code required to start the app
-   *
-   * NOTE: To simplify this codelab, we've used localStorage.
-   *   localStorage is a synchronous API and has serious performance
-   *   implications. It should not be used in production applications!
-   *   Instead, check out IDB (https://www.npmjs.com/package/idb) or
-   *   SimpleDB (https://gist.github.com/inexorabletash/c8069c042b734519680c)
-   ************************************************************************/
 
   //app.selectedCities = localforage.getItem('selectedCities');
   localforage.getItem('selectedCities').then(function (value) {
@@ -1040,11 +1034,7 @@ function overlayNotes() {
       app.getForecast(city.key, city.label);
     });
   } else {
-    /* The user is using the app for the first time, or the user has not
-     * saved any cities, so show the user some fake data. A real app in this
-     * scenario could guess the user's location via IP lookup and then inject
-     * that data into the page.
-     */
+
     app.updateForecastCard(initialWeatherForecast);
     app.selectedCities = [
       {key: initialWeatherForecast.key, label: initialWeatherForecast.label}
@@ -1053,28 +1043,13 @@ function overlayNotes() {
 
   }
 
-
-
-
-
-
-
-
-
   // TODO add service worker code here
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
              .register('./service-worker.js')
              .then(function() { console.log('Service Worker Registered'); });
   };
-
-
 })();
-
-
-
-
-
 
 
 
