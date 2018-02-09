@@ -10,9 +10,9 @@
 }
 
 
-.img {
+.picture {
   max-width: 95%;
-  display: block;
+ 
 
   padding: 2px;
    border: 8px solid rgb(0, 0, 0);
@@ -23,7 +23,8 @@
 
 div.ex {
   max-width: 95%;
-   max-height: 680px;
+  
+  height: 73%; 
   margin: 0 auto;
   text-align: center;
   border: 8px solid #3F51B5;
@@ -78,7 +79,7 @@ body {
 .header {
   width: 100%;
   height: 56px;
-  color: #FFF;
+
   background: #3F51B5;
   position: fixed;
   font-size: 20px;
@@ -117,6 +118,7 @@ body {
     width: 24px;
     height: 24px;
     margin-right: 16px;
+    /* margin-left: 225px; */
     text-indent: -30000px;
     overflow: hidden;
     opacity: 0.54;
@@ -124,7 +126,24 @@ body {
     transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
     border: none;
     outline: none;
-    cursor: pointer; }
+    cursor: pointer;
+   }
+
+    .header .headerButtonGitHub {
+      width: 24px;
+      height: 24px;
+      margin-right: 16px;
+      margin-left: 400px;
+      text-indent: -30000px;
+      overflow: hidden;
+      opacity: 0.54;
+      -webkit-transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
+      transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
+      border: none;
+      outline: none;
+      cursor: pointer;
+  }
+
   .header #butRefresh {
     background: url(/images/ic_refresh_white_24px.svg) center center no-repeat; }
   .header #butAdd {
@@ -137,6 +156,38 @@ body {
       background: url(/images/earth-globe.svg) center center no-repeat; }
   .header #butNotes{
       background: url(/images/Notes.svg) center center no-repeat; }
+
+.delButton {
+  background-color: #d82424;
+
+  
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.swButton {
+  background-color: #26a500;
+  
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.inButton {
+  background-color: #e7e7e7;
+  
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 
 
 
@@ -752,3 +803,107 @@ input[type="checkbox"] {
   
 
 
+  .modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+.modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+}
+.modalDialog > div {
+    width: 60%;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+}
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+.close:hover {
+    background: #00d9ff;
+}
+
+
+
+
+.buttonDe {
+  display: inline-block;
+  border-radius: 10px;
+  background-color: #3F51B5;
+  border: none;
+  color: #FFFFFF;
+  text-align: left;
+  font-size: 30px;
+  padding: 5px;
+  /* width: 119px; */
+  height: 40px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: -8px;
+  font-weight: 400;
+  font-size: 25px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+
+         }
+
+
+
+.buttonDe span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonDe span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonDe:hover span {
+  padding-right: 25px;
+}
+
+.buttonDe:hover span:after {
+  opacity: 1;
+  right: 0;
+}
