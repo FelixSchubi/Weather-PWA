@@ -25,11 +25,22 @@
   <header class="header">
        
 
+  <a href="http://github.com/FelixSchubi/Weather-PWA" class="buttonDe" class="btn btn-default"style="vertical-align:middle"><span> Github </span></button></a>
 
-    <h1 class="header__title">PWA</h1>
-   
 
-    <a href='#' onclick='overlayLocation()'><button id="butLocation" class="headerButton" ></button></a>
+    <a href="#openModal" ><button id="butLocation" class="headerButton" ></button></a>
+
+
+    <div id="openModal" class="modalDialog">
+        <div> 	<a href="#close" title="Close" class="close">X </a>
+    
+              <h2>Offline Maps</h2>
+    
+            <p>In Process</p>
+
+        </div>
+    </div>
+
     <a href='#' onclick='overlay()'><button id="butBilder" class="headerButton" ></button></a>
     <a href='#' onclick='overlayNotes()'><button id="butNotes" class="headerButton" ></button></a>
     <a href='#' onclick='overlayAlbum()'><button id="butAlbum" class="headerButton" ></button></a>
@@ -212,6 +223,7 @@
   <script src="scripts/localforage.js"></script>
   <script src="scripts/app.js" async></script>
   <script scr="scripts/indexeddb.js" async></script>
+  
 
 
   <!-- Testzone -->
@@ -283,10 +295,10 @@
               x.innerHTML="Latitude: " + position.coords.latitude + 
               "<br>Longitude: " + position.coords.longitude;
           }
-          </script> -->
+          </script> 
+         <body>-->
 
-
-          <body>
+       
           
   
 </body>
@@ -359,7 +371,10 @@
     <!*********************Overlay Album***************************>
     
     <div id="overlayAlbum">
-      <div>
+    
+     
+        
+
         <style>
           .thumb {
             height: 95px;
@@ -372,18 +387,24 @@
             <h1>Album</h1>
           </header>
 
-    <input id="files" type="file" multiple/>
+    <input id="files" class="inButton" type="file" multiple/>
 
     
-            <button id="ShowTuesday">Show</button>
-      <button a href='#' onclick='overlayAlbum()'>Schließen</a> </button>
-      <button id="deleteALL">DELETE</button>
+            <button id="ShowTuesday" class="swButton">Show</button>
 
-            <div class="ex">    <output id="result" /> </div>        
+      <button id="deleteALL" class="delButton">DELETE ALL</button>
+
+      <button a href='#' onclick='overlayAlbum()'>Schließen</a> </button>
         
- 
       
-      </div>   
+      
+      <div class="ex">    <output id="result" /> </div>        
+
+
+
+
+      
+ 
         <img id="output"/>
     </div>
     
