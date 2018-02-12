@@ -4,12 +4,7 @@
 <img src="images/pwa-reliable.png" alt="PWA-reliable" width="800" height="350">
 
 
-Instant Loading: Building offline-first Progressive Web Apps - Google I/O 2016 <br>
-!!! https://www.youtube.com/watch?v=cmGr0RszHc8 !!! <br/>
-
-Intro to Progressive Web Apps - von Google <br/>
-https://de.udacity.com/course/intro-to-progressive-web-apps--ud811 :) <br/>
-
+<h1> https://schubi-pwa.firebaseapp.com/ </h1>
 
 
 ```bash
@@ -19,13 +14,13 @@ PWA "https://developers.google.com/web/progressive-web-apps/"
 ## Table of Contents
 
   - [Grundlage](#grundlage)
+  - [Firebase](#firebase)
   - [Android Devices](#android-devices)
   - [iOS Devices](#ios-devices)
   - [Konsole für Android Browser](#konsole-für-android-browser)
   - [Offlinefähigkeit](#offlinefähigkeit)
   - [Bilder Offline Speichern](#bilder-offline-speichern)
   - [Offline Notizen](#offline-notizen)
-  - [GitHub](#github)
   - [Pluralsight](#pluralsight)
   - [Handbuch](#handbuch)
   - [Nativefier](#nativefier)
@@ -38,7 +33,23 @@ Als Grundlage für das gesamte Projekt wird ein Beispiel aus den Code Labs von G
 Und zwar das Projekt: 
 Your First Progressive Web App
 - https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/ <br/>
-Nach der Erstellung der App und die Einarbeitung in HTML5 und JavaScript wurde mit der ausgiebigeren Recherche zum Thema Progressive Web Apps begonnen.
+Nach der Erstellung der App und die Einarbeitung in HTML5 und JavaScript wurde mit der ausgiebigeren Recherche zum Thema Progressive Web Apps begonnen. <br/>
+
+### Usefull links:
+Instant Loading: Building offline-first Progressive Web Apps - Google I/O 2016 <br>
+!!! https://www.youtube.com/watch?v=cmGr0RszHc8 !!! <br/>
+
+Intro to Progressive Web Apps - von Google <br/>
+https://de.udacity.com/course/intro-to-progressive-web-apps--ud811 :) <br/>
+
+
+
+## Firebase
+- https://console.firebase.google.com <br/>
+
+```bash
+Firebase gives you the tools to develop high-quality apps, grow your user base, and earn more money. We cover the essentials so you can monetize your business and focus on your users.
+```
   
 ## Android Devices
 
@@ -204,14 +215,6 @@ Ein solches Projekt gab es schon, wodurch es mir möglich war den Code größten
 
 
 - http://blog.teamtreehouse.com/create-your-own-to-do-app-with-html5-and-indexeddb
-
-
-## GitHub
-
-Das Alles wurde in einem GitHub Repository zusammengeführt.
-- https://github.com/FelixSchubi/Weather-PWA
-
-
 
 
 ## Pluralsight 
