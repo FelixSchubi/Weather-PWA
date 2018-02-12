@@ -244,6 +244,7 @@ Bei GoogleChrome besteht die Möglichkeit, ein App-Shortcut am Desktop anzulegen
 Möglichkeit von Push-Nachrichten:
 - https://developers.google.com/web/fundamentals/codelabs/push-notifications/
 <br/>
+
 Einarbeitung in Polymer:
 - https://www.polymer-project.org/2.0/start/toolbox/set-up
 
