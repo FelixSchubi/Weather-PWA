@@ -236,8 +236,10 @@ Bei GoogleChrome besteht die Möglichkeit, ein App-Shortcut am Desktop anzulegen
 
 
 ## TODO
+Möglichkeit von Push-Nachrichten:
 - https://developers.google.com/web/fundamentals/codelabs/push-notifications/
 <br/>
+
 
 ### New Code
 Input von mehreren Bilder und Vorschau vor dem Upload
