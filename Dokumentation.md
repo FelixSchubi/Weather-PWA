@@ -6,6 +6,8 @@
 
 <h1> https://schubi-pwa.firebaseapp.com/ </h1>
 
+<img src="images/Lighthouse.png" alt="lighthouse" width="850" height="100">
+
 
 ```bash
 PWA "https://developers.google.com/web/progressive-web-apps/"
