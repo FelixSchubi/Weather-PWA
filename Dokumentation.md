@@ -16,6 +16,7 @@ PWA "https://developers.google.com/web/progressive-web-apps/"
 ## Table of Contents
 
   - [Grundlage](#grundlage)
+  - [Polymer](#polymer)
   - [Firebase](#firebase)
   - [Android Devices](#android-devices)
   - [iOS Devices](#ios-devices)
@@ -43,6 +44,17 @@ Instant Loading: Building offline-first Progressive Web Apps - Google I/O 2016 <
 
 Intro to Progressive Web Apps - von Google <br/>
 https://de.udacity.com/course/intro-to-progressive-web-apps--ud811 :) <br/>
+
+## Polymer
+```bash
+Polymer is an open-source JavaScript library for building web applications using Web Components.
+```
+Gestart wird mit diesem Porjekt:
+- https://www.polymer-project.org/2.0/start/quick-tour
+
+Im Anschluss wurden diese Funktionen in das bestehende Projekt mit eingebunden.
+- https://auth0.com/blog/build-your-first-app-with-polymer-and-web-components/
+
 
 
 
@@ -249,8 +261,6 @@ Möglichkeit von Push-Nachrichten:
 - https://developers.google.com/web/fundamentals/codelabs/push-notifications/
 <br/>
 
-Einarbeitung in Polymer:
-- https://www.polymer-project.org/2.0/start/toolbox/set-up
 
 
 
