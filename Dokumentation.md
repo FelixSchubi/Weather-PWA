@@ -264,7 +264,7 @@ Bei GoogleChrome besteht die Möglichkeit, ein App-Shortcut am Desktop anzulegen
 Möglichkeit von Push-Nachrichten:
 - https://developers.google.com/web/fundamentals/codelabs/push-notifications/
 <br/>
-
+todo branch -> timestampt als objectStore von "MasterSav()"
 
 
 
@@ -277,7 +277,9 @@ HTML5 Accelerometer (JS window.DeviceMotionEvent API)
 <br/>
 
 Es ist jetzt möglich beliebig viele Bilder Offline zu Speichern und anschließend wiederzugeben <br/>
-Bei den Notizen werden nun auch Datum und Uhrzeit der Eingabe gespeichert und mit an gezeigt
+Bei den Notizen werden nun auch Datum und Uhrzeit der Eingabe gespeichert und mit an gezeigt <br/>
+
+
 
 
 [Zum Anfang↑](#evaluierung-von-pwas)
