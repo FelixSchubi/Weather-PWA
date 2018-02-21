@@ -276,7 +276,8 @@ HTML5 Accelerometer (JS window.DeviceMotionEvent API)
 - https://codepen.io/lehollandaisvolant/pen/prgZyB <br/>
 <br/>
 
-Es ist jetzt möglich beliebig viele Bilder Offline zu Speichern und anschließend wiederzugeben
+Es ist jetzt möglich beliebig viele Bilder Offline zu Speichern und anschließend wiederzugeben <br/>
+Bei den Notizen werden nun auch Datum und Uhrzeit der Eingabe gespeichert und mit an gezeigt
 
 
 [Zum Anfang↑](#evaluierung-von-pwas)
