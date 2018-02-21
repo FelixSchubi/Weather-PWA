@@ -234,6 +234,10 @@ Ein solches Projekt gab es schon, wodurch es mir möglich war den Code größten
 
 - http://blog.teamtreehouse.com/create-your-own-to-do-app-with-html5-and-indexeddb
 
+### zum Thema @param
+
+- http://usejsdoc.org/tags-param.html
+
 
 ## Pluralsight 
 
