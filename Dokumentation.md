@@ -233,6 +233,14 @@ Ein solches Projekt gab es schon, wodurch es mir möglich war den Code größten
 
 
 - http://blog.teamtreehouse.com/create-your-own-to-do-app-with-html5-and-indexeddb
+### Neuer Code
+Bilder Hinzufügen und Speichern // Filereader:
+
+- https://stackoverflow.com/questions/3814231/loading-an-image-to-a-img-from-input-file
+
+Datum wann die Notiz hinzugefügt wurde:
+
+- http://jsfiddle.net/joya/o22s96ne/
 
 ### zum Thema @param
 
@@ -277,7 +285,7 @@ HTML5 Accelerometer (JS window.DeviceMotionEvent API)
 <br/>
 
 Es ist jetzt möglich beliebig viele Bilder Offline zu Speichern und anschließend wiederzugeben <br/>
-Bei den Notizen werden nun auch Datum und Uhrzeit der Eingabe gespeichert und mit an gezeigt <br/>
+
 
 
 
