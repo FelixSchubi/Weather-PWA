@@ -1,18 +1,12 @@
 
 
-/***************Notification Test Ende */
-
-
-
-  
   // IndexedDB
   var indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.OIndexedDB || window.msIndexedDB,
   IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.OIDBTransaction || window.msIDBTransaction,
   dbVersion = 1.0;
 
 
-
-
+  
 
 /**************  Gyroskop ***********/
 
@@ -507,10 +501,8 @@ var todoDB = (function() {
 // bild als base64 Speichern
 
   var blob = document.getElementById("outImage").src;
-
-
-
-var tmp = blob;
+  
+// var tmp = blob;
 
  if(blob == 0)
  {
@@ -518,6 +510,7 @@ var tmp = blob;
  }
 
 
+// var tmp = blob;
     var todo = {
       'text': text,
       'date': timestamp,
@@ -525,6 +518,8 @@ var tmp = blob;
       'image' : blob,
     };
  
+
+
     var request = objStore.put(todo);
 
     
@@ -590,7 +585,9 @@ window.onload = function() {
         var fr = new FileReader();
         fr.onload = function () {
             document.getElementById("outImage").src = fr.result;
-         
+    
+            
+                   
         }
         fr.readAsDataURL(files[0]);
       }
@@ -643,9 +640,6 @@ function refreshTodos() {
 // span für Timestamp erstellen
 
       var spanTime = document.createElement('spanTime');
-// span für Image erstellen
-
-      var spanImageUrl = document.createElement('spanImageUrl');
 
       var checkbox = document.createElement('input');
 
@@ -658,10 +652,28 @@ function refreshTodos() {
       checkbox.setAttribute("data-id", todo.keyPathi);
 
 // Um Bilder anzuzeigen
+// span für Image erstellen
+
+var spanImageUrl = document.createElement('spanImageUrl');
+
+
 
 spanImageUrl.innerHTML = todo.image;
 
 console.log(spanImageUrl.innerHTML);
+
+var tmp = spanImageUrl.innerHTML;
+
+console.log(tmp);
+
+
+if(tmp == "kein Bild hinzugefügt")
+{
+  var check = document.createElement('check');
+  check.innerHTML = tmp;
+}
+else
+{
 
       var check = document.createElement('img');
 
@@ -671,7 +683,7 @@ console.log(spanImageUrl.innerHTML);
 
       check.label = "image"
 
-      
+}     
 
    
 
