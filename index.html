@@ -224,6 +224,7 @@
   <script src="scripts/app.js" async></script>
   <script scr="scripts/indexeddb.js" async></script>
   
+  
 
 
   <!-- Testzone -->
@@ -353,9 +354,20 @@
     <!-- Form for new Todo Items -->
     <form id="new-todo-form" method="POST" action="#">
       <input type="text" name="new-todo" id="new-todo" placeholder="Was soll auf die Liste.." required>
-    </form>
-  
-    <!-- Todo Item List -->
+
+     
+     <label for="todoImg">Bild Dazu?</label>
+     <input type="file" name="file" id="todoImg" class="todoImg" />
+
+
+      <button class="saveNote" >Notiz Speichern!</button>
+  </form>
+
+
+
+       <img id="outImage" class="outImg" height="50">
+      
+
     <ul id="todo-items"></ul>
   </div>
 </body>

@@ -752,7 +752,7 @@ background: url(/images/reply.svg) center center no-repeat; }
 }
 
 #new-todo {
-  width: 95%;
+  width: 68%;
  padding: 0.5em;
   font-size: 1em; 
   border-radius: 3px;
@@ -793,9 +793,96 @@ input[type="checkbox"]{
   cursor:pointer;
 }
 
+.saveNote{
+  background: white;
+    outline: auto;
+    outline-color: white;
+    outline-style: solid;
+    margin-left: 24%;
+}
+
+/* #todoImg{
+  background: white;
+  border-radius: 0px;
+  outline: auto;
+  outline-color: white;
+  outline-style: solid;
+} */
+
+/* input styling // https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/ */
+
+.todoImg {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.todoImg + label {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: white;
+  background-color: black;
+  display: inline-block;
+}
+
+.todoImg:focus + label,
+.todoImg + label:hover {
+  background-color: red;
+}
+
+.todoImg + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.todoImg:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+
+
+label{
+  background: white;
+  outline: auto;
+  outline-color: black;
+  outline-style: solid;
+  margin-left: -1%;
+  width: 68%;
+  padding: 0.3em;
+  font-size: 1em;
+  border-radius: 3px;
+}
+
+
+
+
+
 span{
   font-size: 25px;
 }
+
+img{
+  margin-left: 42%;
+  outline: auto;
+  outline-color: black;
+  max-width: 16%;
+  margin-right: 45%;
+  margin-top: 1%;
+}
+
+#outImg
+{
+  margin-left: 42%;
+  outline: auto;
+  outline-color: black;
+  max-width: 16%;
+  margin-bottom: 2%;
+}
+
+
 
 
 /****************Ende Notes********/
