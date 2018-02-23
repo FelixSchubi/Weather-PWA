@@ -1,4 +1,4 @@
-## Evaluierung von PWAs  <img src="https://travis-ci.org/FelixSchubi/Weather-PWA.svg?branch=master" >
+## Evaluierung von PWAs  <img src="#https://api.travis-ci.org/repos/FelixSchubi/Weather-PWA/cc.xml?branch=master" >
 
 
 
