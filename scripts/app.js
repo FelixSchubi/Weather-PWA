@@ -1,9 +1,4 @@
 
-
-/***************Notification Test Ende */
-
-
-
   
   // IndexedDB
   var indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.OIndexedDB || window.msIndexedDB,
@@ -107,11 +102,11 @@ function loadTuesday(){
                   
                   var div = document.createElement("div");
 
-               
                   
                   div.innerHTML = "<img class='picture' id='iPIC' src='" + picFile.result + "'" +
-                  "title=" + picFile.name +  "'/>";
-            
+                  "title='" + picFile.name + "'/>";
+                  
+
                   output.insertBefore(div,null);            
               
               });
@@ -212,7 +207,9 @@ function IndexSave (bild, count)
               var transaction = db.transaction(["Bilder"], IDBTransaction.READ_WRITE);
   
               // Put the blob into the dabase
+
               count = count+ 1;
+
 
               var put = transaction.objectStore("Bilder").put(blob, "Bild: " + count);
   
@@ -313,6 +310,7 @@ request.onsuccess = function (event)
 
           
           var div = document.createElement("div");
+
          
           div.innerHTML = "<img class='picture' id='iPIC' src='" + picFile.result + "'" +
                   "title='" + picFile.name + "'/>";
@@ -320,15 +318,15 @@ request.onsuccess = function (event)
         
 
           output.insertBefore(div, null);            
+
       
       });
       
        //Read the image
 
+
        
       picReader.readAsDataURL(tue); 
-      
-      console.log(tue);
 
   
     }      
@@ -338,6 +336,54 @@ request.onsuccess = function (event)
 };
 
 
+
+/**********Dienstag Ende ****************/
+
+
+/********************DeleteALL */
+
+document.getElementById("deleteALL").addEventListener("click",DELETE);
+
+function DELETE ()
+{
+
+var DBOpenRequest = window.indexedDB.open("Woche", dbVersion);
+
+DBOpenRequest.onsuccess = function(event) {
+
+  db = DBOpenRequest.result;
+
+  clearData();
+  console.log("Bilder wurden gelöscht");
+  location.reload();
+=======
+
+};
+
+function clearData() {
+  
+
+  var transaction = db.transaction(["Bilder"], "readwrite");
+
+
+  transaction.oncomplete = function(event) {
+
+  };
+
+  transaction.onerror = function(event) {
+
+  };
+
+
+  var objectStore = transaction.objectStore("Bilder");
+
+  var objectStoreRequest = objectStore.clear();
+
+  objectStoreRequest.onsuccess = function(event) {
+
+  };
+};
+}
 
 /**********Dienstag Ende ****************/
 
@@ -399,7 +445,9 @@ var todoDB = (function() {
     // Database version.
     var version = 1;
 
+
     // Verbindung zum Store
+
     var request = indexedDB.open('Notes', version);
 
     // Handlet upgrades
@@ -1163,10 +1211,7 @@ function overlayNotes() {
       {key: initialWeatherForecast.key, label: initialWeatherForecast.label}
     ];
     app.saveSelectedCities();
-
   }
-
-
 
   
   // TODO add service worker code here
