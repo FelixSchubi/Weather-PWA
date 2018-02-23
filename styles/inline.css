@@ -801,6 +801,11 @@ input[type="checkbox"]{
     margin-left: 24%;
 }
 
+check{
+  margin-right: 24%;
+}
+
+
 /* #todoImg{
   background: white;
   border-radius: 0px;
