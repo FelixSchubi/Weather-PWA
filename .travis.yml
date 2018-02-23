@@ -4,4 +4,4 @@ sudo: required
 node_js:
 - "0.10"
 before_install:
-mkdir test
+npm test
