@@ -5,10 +5,12 @@
 
 }
 
+
   .image-box {
     padding: 2px;
     border: 3px solid red;
     float: left;
+
 }
 
 
@@ -32,7 +34,6 @@ div.ex {
   overflow-y: scroll;
   overflow-x:hidden;
 }
-
 
 
 
@@ -894,6 +895,7 @@ img{
   /*   Accelerometer  */
 
 
+
   
   #block {
     width: 80%;
@@ -972,6 +974,7 @@ img{
 
 
 
+
 .buttonDe {
   display: inline-block;
   border-radius: 10px;
@@ -1020,4 +1023,6 @@ img{
 .buttonDe:hover span:after {
   opacity: 1;
   right: 0;
+
 }
+
