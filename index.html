@@ -25,11 +25,22 @@
   <header class="header">
        
 
+  <a href="http://github.com/FelixSchubi/Weather-PWA" class="buttonDe" class="btn btn-default"style="vertical-align:middle"><span> Github </span></button></a>
 
-    <h1 class="header__title">PWA</h1>
-   
 
-    <a href='#' onclick='overlayLocation()'><button id="butLocation" class="headerButton" ></button></a>
+    <a href="#openModal" ><button id="butLocation" class="headerButton" ></button></a>
+
+
+    <div id="openModal" class="modalDialog">
+        <div> 	<a href="#close" title="Close" class="close">X </a>
+    
+              <h2>Offline Maps</h2>
+    
+            <p>In Process</p>
+
+        </div>
+    </div>
+
     <a href='#' onclick='overlay()'><button id="butBilder" class="headerButton" ></button></a>
     <a href='#' onclick='overlayNotes()'><button id="butNotes" class="headerButton" ></button></a>
     <a href='#' onclick='overlayAlbum()'><button id="butAlbum" class="headerButton" ></button></a>
@@ -42,20 +53,10 @@
 
   <main class="main">
 
-<!-- Faulheit
 
-      <input type="file" name="fileInput" accept="image/*" multiple onChange="fileThumbnail(this.files);"> 
-      <div id="thumbnail"></div>
-      
-      <button id="MasterSaDie">1. Bild Speichern</button><br/>
-      <button id="ShowPictureDie">2. Bild Anzeigen</button><br/>
-      <button id="DeleteTuesday">3. Bild löschen</button><br/>
-      <!Faulheit-->  
-    
 
-      
- 
-    
+
+
     <div class="card cardTemplate weather-forecast" hidden>
       <div class="city-key" hidden></div>
       <div class="card-last-updated" hidden></div>
@@ -183,7 +184,8 @@
       </div>
     </div>
 
-
+    
+    
 
   </main>
 
@@ -220,13 +222,8 @@
   <!-- Uncomment the line below when ready to test with fake data -->
   <script src="scripts/localforage.js"></script>
   <script src="scripts/app.js" async></script>
-  <script src="scripts/die.js" async></script>
   <script scr="scripts/indexeddb.js" async></script>
-
-
-
-
-
+  
 
 
   <!-- Testzone -->
@@ -245,21 +242,21 @@
         margin: 10px 5px 0 0;
       }
     </style>
-    <header>
+    <!-- <header>
       <h1>GoogleMaps:</h1>
     </header>
       <body>
         <html>
-          <body>
+          <body> -->
               <button a href='#' onclick='overlayLocation()'>Schließen</a> </button>
           
-          <div id="map" style="width: 90%;
+          <!-- <div id="map" style="width: 90%;
           height: 60%;
           background: rgb(0, 0, 0);
           position: fixed;"></div>
 
 
-      
+       -->
          <!--
           <script>
         
@@ -298,35 +295,41 @@
               x.innerHTML="Latitude: " + position.coords.latitude + 
               "<br>Longitude: " + position.coords.longitude;
           }
-          </script> -->
+          </script> 
+         <body>-->
 
-
-
-          </body>
-          </html>
+       
           
- 
-
-
-    
-
-
-  </div>
   
 </body>
 
 
 <!------------------------------------------------------------------------------>
-<!Taschenrechner Anzeigen*************************************************>
+<!ACC Anzeigen*************************************************>
 <div id="overlay">
+    <style>
+        .thumb {
+          height: 95px;
+          border: 1px solid rgb(19, 18, 18);
+          margin: 10px 5px 0 0;
+        }
+  </style>
+
+
+<section>
+  <span id="acc"></span><br>
+  alpha X: <input type="text" readonly id="x" value="" /><br>
+  alpha Y: <input type="text" readonly id="y" value="" /><br>
+  alpha Z: <input type="text" readonly id="z" value="" /><br>
+  </section>
   
-<body>
-    <button a href='#' onclick='overlay()'>Schließen</a> </button>  
+  <div id="block">↑</div>
+
   </body>
-   
+  <button a href='#' onclick='overlay()'>Schließen</a> </button>  
   
 </div>
-<!Taschenrechner Anzeigen**************************Ende***********************>
+<!ACC Anzeigen**************************Ende***********************>
 
 
 <!**********************overlayNotes**************************>
@@ -368,7 +371,10 @@
     <!*********************Overlay Album***************************>
     
     <div id="overlayAlbum">
-      <div>
+    
+     
+        
+
         <style>
           .thumb {
             height: 95px;
@@ -380,94 +386,27 @@
           <header>
             <h1>Album</h1>
           </header>
-          <h2>
-            Montag: 
-          <button a href='#' onclick="overlayMontag(1)">Montag</button><br/>
 
+    <input id="files" class="inButton" type="file" multiple/>
 
     
+            <button id="ShowTuesday" class="swButton">Show</button>
 
+      <button id="deleteALL" class="delButton">DELETE ALL</button>
 
-
-          Dienstag: 
-          <button a href='#' onclick="overlayDienstag(1)">Dienstag</button>
-        </h2>
-    
+      <button a href='#' onclick='overlayAlbum()'>Schließen</a> </button>
+        
       
-        </body>
-        <button a href='#' onclick='overlayAlbum()'>Schließen</a> </button>
+      
+      <div class="ex">    <output id="result" /> </div>        
+
+
+ 
+       <img id="output"/>
+   
       </div>
-    </div>
     
       <!**********************Overlay Album Ende**************************>
-      <!**********************OverlayMontag**************************>
-      <div id="overlayMontag">
-        <div>
-          <style>
-            .thumb {
-              height: 95px;
-              border: 1px solid rgb(19, 18, 18);
-              margin: 10px 5px 0 0;
-            }
-          </style>
-          
-            <header>
-              <h1>Montag:</h1>
-            </header>
-
-            <input type="file" accept="image/*" onchange="loadFile(event)"><br/><br/>
-            <img id="output"/><br/><br/>
-            <button id="MasterSaMo">1. Bild Speichern</button><br/>
-            <button id="ShowPictureMo">2. Bild Anzeigen</button><br/>
-            <button id="DeleteMonday">3. Bild löschen</button><br/>
-            
-          
-          
-          <!  <img src="" id="MpcM" alt="" height="230" width="270">
-
-          <img src="" id="MpcM" alt="" height="" width="">
-
-
-        
-          </body>
-          <button a href='#' onclick='overlayMontag()'>Schließen</a> </button>
-          
-        </div>
-      </div>
-      <!**********************OverlayMontag Ende**************************>
-      <!**********************overlayDienstag**************************>
-      <div id="overlayDienstag">
-        <div>
-          <style>
-            .thumb {
-              height: 95px;
-              border: 1px solid rgb(19, 18, 18);
-              margin: 10px 5px 0 0;
-            }
-          </style>
-          
-            <header>
-              <h1>Dienstag:</h1>
-            </header>
-
-
-            <input type="file" accept="image/*" onchange="loadFileDIE(event)"><br/><br/>
-            <img id="outputDIE"/><br/><br/>
-              
-              <button id="storeImageDIE">Upload</button>
-           
-
-        
-          </body>
-          <button a href='#' onclick='overlayDienstag()'>Schließen</a> </button>
-          
-        </div>
-      </div>
-      <!**********************overlayDienstag Ende**************************>
-
-    
-
-
-
+   
 </body>
 </html>
