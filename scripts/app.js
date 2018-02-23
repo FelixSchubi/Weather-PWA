@@ -101,10 +101,12 @@ function loadTuesday(){
 
                   
                   var div = document.createElement("div");
+
                   
                   div.innerHTML = "<img class='picture' id='iPIC' src='" + picFile.result + "'" +
                   "title='" + picFile.name + "'/>";
                   
+
                   output.insertBefore(div,null);            
               
               });
@@ -205,7 +207,9 @@ function IndexSave (bild, count)
               var transaction = db.transaction(["Bilder"], IDBTransaction.READ_WRITE);
   
               // Put the blob into the dabase
-              count= count+ 1;
+
+              count = count+ 1;
+
 
               var put = transaction.objectStore("Bilder").put(blob, "Bild: " + count);
   
@@ -306,17 +310,23 @@ request.onsuccess = function (event)
 
           
           var div = document.createElement("div");
-          
+
+         
           div.innerHTML = "<img class='picture' id='iPIC' src='" + picFile.result + "'" +
                   "title='" + picFile.name + "'/>";
-          
-          output.insertBefore(div,null);            
+         
+        
+
+          output.insertBefore(div, null);            
+
       
       });
       
        //Read the image
+
+
+       
       picReader.readAsDataURL(tue); 
-      console.log(tue);
 
   
     }      
@@ -326,6 +336,54 @@ request.onsuccess = function (event)
 };
 
 
+
+/**********Dienstag Ende ****************/
+
+
+/********************DeleteALL */
+
+document.getElementById("deleteALL").addEventListener("click",DELETE);
+
+function DELETE ()
+{
+
+var DBOpenRequest = window.indexedDB.open("Woche", dbVersion);
+
+DBOpenRequest.onsuccess = function(event) {
+
+  db = DBOpenRequest.result;
+
+  clearData();
+  console.log("Bilder wurden gelöscht");
+  location.reload();
+=======
+
+};
+
+function clearData() {
+  
+
+  var transaction = db.transaction(["Bilder"], "readwrite");
+
+
+  transaction.oncomplete = function(event) {
+
+  };
+
+  transaction.onerror = function(event) {
+
+  };
+
+
+  var objectStore = transaction.objectStore("Bilder");
+
+  var objectStoreRequest = objectStore.clear();
+
+  objectStoreRequest.onsuccess = function(event) {
+
+  };
+};
+}
 
 /**********Dienstag Ende ****************/
 
@@ -377,69 +435,81 @@ function clearData() {
 
 
 var todoDB = (function() {
+  // tDB = {object}
   var tDB = {};
   var datastore = null;
 
-  /**
-   * Open a connection to the datastore.
-   */
+ 
   tDB.open = function(callback) {
+    console.log("tDB.open = function(callback) ");
     // Database version.
     var version = 1;
 
-    // Open a connection to the datastore.
+
+    // Verbindung zum Store
+
     var request = indexedDB.open('Notes', version);
 
-    // Handle datastore upgrades.
+    // Handlet upgrades
     request.onupgradeneeded = function(e) {
       var db = e.target.result;
 
       e.target.transaction.onerror = tDB.onerror;
 
-      // Delete the old datastore.
+      // löscht den alten
       if (db.objectStoreNames.contains('todo')) {
         db.deleteObjectStore('todo');
       }
 
-      // Create a new datastore.
+
+
+      // es muss "keyPathi" benutzt werden, da es mir nur möglich war den ObjectStore zu löschen,
+      // wenn der ObjectStore name nur Ziffern enthält -> Zusatz: entsteht immer eine andere Nummer!
+      // line 500: var keyPathi = new Date().getTime();
+
       var store = db.createObjectStore('todo', {
-        keyPath: 'timestamp'
-      });
+        keyPath: 'keyPathi' 
+      }
+    );
     };
 
-    // Handle successful datastore access.
+    // Erfolgreich
     request.onsuccess = function(e) {
-      // Get a reference to the DB.
+      // Referenz zur Database
       datastore = e.target.result;
-      
-      // Execute the callback.
+   
       callback();
+      console.log("callback() // request onsuccess");
     };
 
-    // Handle errors when opening the datastore.
+    // Handlet Errors.
     request.onerror = tDB.onerror;
   };
 
 
-  /**
-   * Fetch all of the todo items in the datastore.
-   * @param {function} callback A function that will be executed once the items
-   *                            have been retrieved. Will be passed a param with
-   *                            an array of the todo items.
-   */
+ 
   tDB.fetchTodos = function(callback) {
+    console.log("tDB.fetchTodos = function(callback)");
     var db = datastore;
     var transaction = db.transaction(['todo'], 'readwrite');
     var objStore = transaction.objectStore('todo');
 
+//__________________________________________________________//
+
     var keyRange = IDBKeyRange.lowerBound(0);
     var cursorRequest = objStore.openCursor(keyRange);
+
+//_______________________________________________________//
+
 
     var todos = [];
 
     transaction.oncomplete = function(e) {
-      // Execute the callback function.
+    
+      resetImage();
       callback(todos);
+      console.log("callback(todos)");
+      
     };
 
     cursorRequest.onsuccess = function(e) {
@@ -458,59 +528,80 @@ var todoDB = (function() {
   };
 
 
-  /**
-   * Create a new todo item.
-   * @param {string} text The todo item.
-   */
-  
-  tDB.createTodo = function(text, callback) {
-    // Get a reference to the db.
+
+  tDB.createTodo = function(text , callback) {
+    console.log("tDB.createTodo = function(text , callback)")
+    
     var db = datastore;
 
-    // Initiate a new transaction.
+    // Neue Transaktion
     var transaction = db.transaction(['todo'], 'readwrite');
 
-    // Get the datastore.
+    // Holt den ObjectStore
     var objStore = transaction.objectStore('todo');
 
-    // Create a timestamp for the todo item.
-    var timestamp = new Date().getTime();
+  
+    // Datum und Uhrzeit als Timestamp festlegen
+
+    var dNow = new Date();
+    var timestamp = 'Added:  ' + dNow.getDate() + '/' + (dNow.getMonth()+1) + '/' + dNow.getFullYear() + ' ' + 
+    dNow.getHours() + ':' + dNow.getMinutes() + ':' + dNow.getSeconds();
+   
+    var keyPathi = new Date().getTime();
     
-    // Create an object for the todo item.
+
+
+    // Object für das todo item -> neu /-> 'date' : timestamp
+// bild als base64 Speichern
+
+  var blob = document.getElementById("outImage").src;
+
+
+
+var tmp = blob;
+
+ if(blob == 0)
+ {
+   blob = "kein Bild hinzugefügt"
+ }
+
+
     var todo = {
       'text': text,
-      'timestamp': timestamp
+      'date': timestamp,
+      'keyPathi': keyPathi,
+      'image' : blob,
     };
-
-    // Create the datastore request.
+ 
     var request = objStore.put(todo);
 
-    // Handle a successful datastore put.
+    
     request.onsuccess = function(e) {
-      // Execute the callback function.
-      callback(todo);
+            callback(todo);
+            console.log("callback(todo)");
+            
+               
     };
-
-    // Handle errors.
+    // Schlecht...->
     request.onerror = tDB.onerror;
   };
 
 
-  /**
-   * Delete a todo item.
-   * @param {int} id The timestamp (id) of the todo item to be deleted.
-   * @param {function} callback A callback function that will be executed if the 
-   *                            delete is successful.
-   */
-  tDB.deleteTodo = function(id, callback) {
+
+
+  tDB.deleteTodo = function(keyPathi, callback) {
+    console.log("tDB.deleteTodo = function(keyPathi, callback)");
     var db = datastore;
     var transaction = db.transaction(['todo'], 'readwrite');
     var objStore = transaction.objectStore('todo');
-    
-    var request = objStore.delete(id);
+
+
+
+    var request = objStore.delete(keyPathi);
     
     request.onsuccess = function(e) {
       callback();
+      console.log("callback() // bei erfolgreichem löschen");
     }
     
     request.onerror = function(e) {
@@ -519,7 +610,7 @@ var todoDB = (function() {
   };
 
 
-  // Export the tDB object.
+  // Exportiert das tDB Object.
   return tDB;
 }());
 
@@ -527,74 +618,154 @@ var todoDB = (function() {
 
 window.onload = function() {
   
-  // Display the todo items.
+  // anzeigen der todo items
   todoDB.open(refreshTodos);
   
   
-  // Get references to the form elements.
+  // referenzierung zu den "form"-elementen
   var newTodoForm = document.getElementById('new-todo-form');
   var newTodoInput = document.getElementById('new-todo');
+  var todoImg = document.getElementById('todoImg');
   
+// FileReader hinzufügen
+
+  document.getElementById('todoImg').onchange = function (evt) {
+    var tgt = evt.target || window.event.srcElement,
+        files = tgt.files;
+
+    // FileReader support
+    if (FileReader && files && files.length) {
+        var fr = new FileReader();
+        fr.onload = function () {
+            document.getElementById("outImage").src = fr.result;
+         
+        }
+        fr.readAsDataURL(files[0]);
+      }
+         
+}
+
   
-  // Handle new todo item form submissions.
+  // Hanlder {{Einreichen einer neuen todo form}}
   newTodoForm.onsubmit = function() {
-    // Get the todo text.
+    // Holt den Text
     var text = newTodoInput.value;
     
-    // Check to make sure the text is not blank (or just spaces).
+    // nicht nichts
     if (text.replace(/ /g,'') != '') {
-      // Create the todo item.
+      // erstellen des todo- items
       todoDB.createTodo(text, function(todo) {
         refreshTodos();
       });
     }
     
-    // Reset the input field.
+    // Setzt Eingabe-Feld auf "0"
     newTodoInput.value = '';
     
-    // Don't send the form.
+    // schlecht ->
     return false;
   };
   
 }
 
-// Update the list of todo items.
+// updated die Liste
 function refreshTodos() {  
   todoDB.fetchTodos(function(todos) {
     var todoList = document.getElementById('todo-items');
     todoList.innerHTML = '';
     
     for(var i = 0; i < todos.length; i++) {
-      // Read the todo items backwards (most recent first).
-      var todo = todos[(todos.length - 1 - i)];
 
+      // ____________________________________________________
+
+      var todo = todos[(todos.length - 1 - i)];
+      console.log(todo);
+      var keyPathi = todos[(todos.length - 1 - i)];
+//___________________________________________________
       var li = document.createElement('li');
-      var checkbox = document.createElement('input');
-      checkbox.type = "checkbox";
-      checkbox.className = "todo-checkbox";
-      checkbox.setAttribute("data-id", todo.timestamp);
-      
-      li.appendChild(checkbox);
+
+
       
       var span = document.createElement('span');
-      span.innerHTML = todo.text;
+
+// span für Timestamp erstellen
+
+      var spanTime = document.createElement('spanTime');
+// span für Image erstellen
+
+      var spanImageUrl = document.createElement('spanImageUrl');
+
+      var checkbox = document.createElement('input');
+
+      checkbox.type = "checkbox";
+
+      checkbox.className = "todo-checkbox";
+
+      checkbox.label = "Delete"
+
+      checkbox.setAttribute("data-id", todo.keyPathi);
+
+// Um Bilder anzuzeigen
+
+spanImageUrl.innerHTML = todo.image;
+
+console.log(spanImageUrl.innerHTML);
+
+      var check = document.createElement('img');
+
+      check.type = "image";
+
+      check.src = spanImageUrl.innerHTML;
+
+      check.label = "image"
+
       
+
+   
+
+// span befüllen
+        span.innerHTML = todo.text;
+  
+      spanTime.innerHTML = todo.date;
+
+      
+
+
+       
       li.appendChild(span);
       
-      todoList.appendChild(li);
-      
-      // Setup an event listener for the checkbox.
-      checkbox.addEventListener('click', function(e) {
-        var id = parseInt(e.target.getAttribute('data-id'));
+     li.appendChild(checkbox);
 
-        todoDB.deleteTodo(id, refreshTodos);
+     li.appendChild(check);
+
+
+     li.appendChild(spanTime);
+
+      todoList.appendChild(li);
+
+      
+      
+      // Erstellen eines event listeners für die checkbox
+      checkbox.addEventListener('click', function(e) {
+        var keyPathi = parseInt(e.target.getAttribute('data-id'));
+
+        todoDB.deleteTodo(keyPathi, refreshTodos);
       });
     }
 
   });
 };
 
+//*******
+// Bild danach wieder entfernen können
 
+function resetImage(){
+  document.getElementById("outImage").value = '';
+  document.getElementById("todoImg").value = '';
+}
+
+
+//*******
 
 
 
@@ -1040,9 +1211,9 @@ function overlayNotes() {
       {key: initialWeatherForecast.key, label: initialWeatherForecast.label}
     ];
     app.saveSelectedCities();
-
   }
 
+  
   // TODO add service worker code here
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker

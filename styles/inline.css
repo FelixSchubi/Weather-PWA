@@ -1,12 +1,16 @@
 
 
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box; 
+
+}
+
 
   .image-box {
     padding: 2px;
     border: 3px solid red;
     float: left;
+
 }
 
 
@@ -34,7 +38,6 @@ div.ex {
 
 
 
-
 html, body {
   padding: 0;
   margin: 0;
@@ -43,7 +46,7 @@ html, body {
   font-family: 'New Century Schoolbook', 'TeX Gyre Schola', 'serif';
   font-weight: 400;
   font-display: optional;
-  color: #444;
+  color: #000;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
@@ -677,7 +680,8 @@ background: url(/images/reply.svg) center center no-repeat; }
   -webkit-box-flex: 1;
   -webkit-flex: 1;
       -ms-flex: 1;
-          flex: 1; }
+          flex: 1; 
+          overflow-x: scroll;}
 
 
 
@@ -749,7 +753,7 @@ background: url(/images/reply.svg) center center no-repeat; }
 }
 
 #new-todo {
-  width: 95%;
+  width: 68%;
  padding: 0.5em;
   font-size: 1em; 
   border-radius: 3px;
@@ -761,29 +765,137 @@ height: 95%;
   list-style: none;
  padding: 0.5em 1em; 
   margin: 0;
+  outline: auto;
+    outline-color: black;
 }
 
 #todo-items li {
  
 
-  padding: 0.5em; 
+  padding: 0.3em; 
   background: #FFF;
-  border-bottom: 1px solid #EEE;
+  border-bottom: 2px solid #000;
 
 }
 
-input[type="checkbox"] {
-  margin-right: 10px;
+/* input[type="checkbox"] {
+
+  width: 100%;
+} */
+
+
+input[type="checkbox"]{
+  display:inline-block;
+  width:100%;
+  height:19px;
+  margin:-2px 10px 0 0;
+  vertical-align:middle;
+  
+  cursor:pointer;
 }
+
+.saveNote{
+  background: white;
+    outline: auto;
+    outline-color: white;
+    outline-style: solid;
+    margin-left: 24%;
+}
+
+/* #todoImg{
+  background: white;
+  border-radius: 0px;
+  outline: auto;
+  outline-color: white;
+  outline-style: solid;
+} */
+
+/* input styling // https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/ */
+
+.todoImg {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.todoImg + label {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: white;
+  background-color: black;
+  display: inline-block;
+}
+
+.todoImg:focus + label,
+.todoImg + label:hover {
+  background-color: red;
+}
+
+.todoImg + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.todoImg:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+
+
+label{
+  background: white;
+  outline: auto;
+  outline-color: black;
+  outline-style: solid;
+  margin-left: -1%;
+  width: 68%;
+  padding: 0.3em;
+  font-size: 1em;
+  border-radius: 3px;
+}
+
+
+
+
+
+span{
+  font-size: 25px;
+}
+
+img{
+  margin-left: 42%;
+  outline: auto;
+  outline-color: black;
+  max-width: 16%;
+  margin-right: 45%;
+  margin-top: 1%;
+}
+
+#outImg
+{
+  margin-left: 42%;
+  outline: auto;
+  outline-color: black;
+  max-width: 16%;
+  margin-bottom: 2%;
+}
+
+
+
+
 /****************Ende Notes********/
 
   /*   Accelerometer  */
 
 
+
   
   #block {
-    width: 300px;
-    height: 300px;
+    width: 80%;
+    height: 59%;
     border: 4px solid blue;
     border-top-color: red;
     margin: 50px auto;
@@ -858,6 +970,7 @@ input[type="checkbox"] {
 
 
 
+
 .buttonDe {
   display: inline-block;
   border-radius: 10px;
@@ -906,4 +1019,6 @@ input[type="checkbox"] {
 .buttonDe:hover span:after {
   opacity: 1;
   right: 0;
+
 }
+
