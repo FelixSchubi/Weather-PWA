@@ -1,9 +1,3 @@
 
 sudo: required
 language: node_js
-node_js:
-  - "8"
-script:
-sudo make test
-sudo npm test
-
