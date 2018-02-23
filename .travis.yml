@@ -4,5 +4,5 @@ sudo: required
 node_js:
 - "0.10"
 script:
-npm test
-
+- npm test
+- "bundle exec rake neo4j:install['community-2.2.0-M02'] neo4j:start default --trace"
