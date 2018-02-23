@@ -356,7 +356,7 @@ DBOpenRequest.onsuccess = function(event) {
   clearData();
   console.log("Bilder wurden gelöscht");
   location.reload();
-=======
+
 
 };
 
