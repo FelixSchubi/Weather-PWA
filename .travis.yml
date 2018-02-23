@@ -1,3 +1,6 @@
-
-sudo: required
+sudo : required
 language: node_js
+sudo: required
+node_js:
+- "0.10"
+before_install:
