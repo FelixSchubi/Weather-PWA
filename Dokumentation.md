@@ -1,4 +1,6 @@
-## Evaluierung von PWAs 
+## Evaluierung von PWAs  <img src="https://travis-ci.org/FelixSchubi/Weather-PWA.svg?branch=master" >
+
+
 
 
 <img src="images/pwa-reliable.png" alt="PWA-reliable" width="800" height="350">
