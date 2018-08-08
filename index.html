@@ -1,44 +1,423 @@
-<html>
 
-	<header>
-		<p> Das ist ein Test </p>
-	</header>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#317EFB"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="canonical" href="https://weather-pwa-sample.firebaseapp.com/final/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wetter PWA</title>
+  <link rel="stylesheet" type="text/css" href="styles/inline.css">
+
+  <!-- TODO add manifest here -->
+  <link rel="manifest" href="../Weather-PWA/manifest.json">
+  
+</head>
+
+
+
 
 <body>
-	<b> Ist der AdBlock aktiviert? </b>
 
-	<button id="testButton"> Test </button>
+  <header class="header">
+       
+
+  <a href="http://github.com/FelixSchubi/Weather-PWA" class="buttonDe" class="btn btn-default"style="vertical-align:middle"><span> Github </span></button></a>
+
+
+    <a href="#openModal" ><button id="butLocation" class="headerButton" ></button></a>
+
+
+    <div id="openModal" class="modalDialog">
+        <div> 	<a href="#close" title="Close" class="close">X </a>
+    
+              <h2>Offline Maps</h2>
+    
+            <p>In Process</p>
+
+        </div>
+    </div>
+
+    <a href='#' onclick='overlay()'><button id="butBilder" class="headerButton" ></button></a>
+    <a href='#' onclick='overlayNotes()'><button id="butNotes" class="headerButton" ></button></a>
+    <a href='#' onclick='overlayAlbum()'><button id="butAlbum" class="headerButton" ></button></a>
+    <button id="butRefresh" class="headerButton" aria-label="Refresh"></button>
+    <button id="butAdd" class="headerButton" aria-label="Add"></button>
+    
+    
+  </header>
+
+
+  <main class="main">
+
+
+
+
+
+    <div class="card cardTemplate weather-forecast" hidden>
+      <div class="city-key" hidden></div>
+      <div class="card-last-updated" hidden></div>
+      <div class="location"></div>
+      <div class="date"></div>
+      <div class="description"></div>
+      <div class="current">
+        <div class="visual">
+          <div class="icon"></div>
+          <div class="temperature">
+          
+          </div>
+          <div class="temperaC">
+            <span class="value"></span><span class="scale">°C</span>
+          </div>
+        </div>
+        <div class="description">
+          <div class="humidity"></div>
+          <div class="wind">
+            <span class="value"></span>
+            <span class="scale">Km/h</span>
+            
+          </div>
+          <div class="sunrise"></div>
+          <div class="sunset"></div>
+        </div>
+      </div>
+      <div class="future">
+        <div class="oneday">
+          <div class="date"></div>
+          <div class="icon"></div>
+          <div class="temp-high">
+            
+          </div>
+          <div class="tempC-high">
+            <span class="value"></span>°
+          </div>
+          <div class="temp-low">
+       
+          </div>
+          <div class="tempC-low">
+            <span class="value"></span>°
+          </div>
+        </div>
+        <div class="oneday">
+          <div class="date"></div>
+          <div class="icon"></div>
+          <div class="temp-high">
+            <span class="value"></span>
+          </div>
+          <div class="tempC-high">
+            <span class="value"></span>°
+          </div>
+          <div class="temp-low">
+            
+          </div>
+          <div class="tempC-low">
+            <span class="value"></span>°
+          </div>
+        </div>
+        <div class="oneday">
+          <div class="date"></div>
+          <div class="icon"></div>
+          <div class="temp-high">
+            <span class="value"></span>
+          </div>
+          <div class="tempC-high">
+            <span class="value"></span>°
+          </div>
+          <div class="temp-low">
+            <span class="value"></span>
+          </div>
+          <div class="tempC-low">
+            <span class="value"></span>°
+          </div>
+        </div>
+        <div class="oneday">
+          <div class="date"></div>
+          <div class="icon"></div>
+          
+          <div class="tempC-high">
+            <span class="value"></span>°
+          </div>
+          
+          <div class="tempC-low">
+            <span class="value"></span>°
+          </div>
+        </div>
+        <div class="oneday">
+          <div class="date"></div>
+          <div class="icon"></div>
+        
+          <div class="tempC-high">
+            <span class="value"></span>°
+          </div>
+         
+          <div class="tempC-low">
+            <span class="value"></span>°
+          </div>
+        </div>
+        <div class="oneday">
+          <div class="date"></div>
+          <div class="icon"></div>
+          
+          <div class="tempC-high">
+            <span class="value"></span>°
+          </div>
+          
+          <div class="tempC-low">
+            <span class="value"></span>°
+          </div>
+        </div>
+        <div class="oneday">
+          <div class="date"></div>
+          <div class="icon"></div>
+      
+          <div class="tempC-high">
+            <span class="value"></span>°
+          </div>
+         
+          <div class="tempC-low">
+            <span class="value"></span>°
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    
+
+  </main>
+
+  <div class="dialog-container">
+    <div class="dialog">
+      <div class="dialog-title">Add new city</div>
+      <div class="dialog-body">
+        <select id="selectCityToAdd">
+          <!-- Values map to Yahoo Weather API Where On Earth Identifiers (WOEIDs).
+               https://developer.yahoo.com/weather/documentation.html#req -->
+          <option value="673641">Mammendorf, DE</option>
+          <option value="686175">Puchheim, de-by</option>
+          <option value="652270">Germering, de-by</option>
+          <option value="676757">München, de-by</option>
+          <option value="2357536">Austin, TX</option>
+          <option value="2367105">Boston, MA</option>
+          <option value="2379574">Chicago, IL</option>
+          <option value="2459115">New York, NY</option>
+          <option value="2475687">Portland, OR</option>
+          <option value="2487956">San Francisco, CA</option>
+          <option value="2490383">Seattle, WA</option>
+        </select>
+      </div>
+      <div class="dialog-buttons">
+        <button id="butAddCity" class="button">Add</button>
+        <button id="butAddCancel" class="button">Cancel</button>
+      </div>
+    </div>
+    
+  </div>
+
+
+
+  <!-- Uncomment the line below when ready to test with fake data -->
+  <script src="scripts/localforage.js"></script>
+  <script src="scripts/app.js" async></script>
+  <script scr="scripts/indexeddb.js" async></script>
+  
+  
+
+
+  <!-- Testzone -->
+
+<!-------------------------------------------------------------------------------------------->
+
+<!GoogleMaps*************************************************>
+
+
+<div id="overlayLocation">
+  <div>
+    <style>
+      .thumb {
+        height: 75px;
+        border: 1px solid rgb(194, 194, 194);
+        margin: 10px 5px 0 0;
+      }
+    </style>
+    <!-- <header>
+      <h1>GoogleMaps:</h1>
+    </header>
+      <body>
+        <html>
+          <body> -->
+              <button a href='#' onclick='overlayLocation()'>Schließen</a> </button>
+          
+          <!-- <div id="map" style="width: 90%;
+          height: 60%;
+          background: rgb(0, 0, 0);
+          position: fixed;"></div>
+
+
+       -->
+         <!--
+          <script>
+        
+          function myMap() {
+          var mapOptions = {
+              center: new google.maps.LatLng(48.173721,11.535022),
+              zoom: 10,
+              mapTypeId: google.maps.MapTypeId.HYBRID
+          }
+          var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+          }
+          </script>
+          
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDenhaitDfcXkfNFpYnEjoumXEro70mS8w&callback=myMap"></script>
+        
+          To use this code on your website, get a free API key from Google.
+          Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+          -->
+          <!-- <p>Click the button to get your coordinates.</p>
+          
+          <button onclick="getLocation()">Try It</button>
+          
+          <p id="demo"></p>
+          
+          <script>
+          var x = document.getElementById("demo");
+          
+          function getLocation() {
+              if (navigator.geolocation) {
+                  navigator.geolocation.watchPosition(showPosition);
+              } else { 
+                  x.innerHTML = "Geolocation is not supported by this browser.";}
+              }
+              
+          function showPosition(position) {
+              x.innerHTML="Latitude: " + position.coords.latitude + 
+              "<br>Longitude: " + position.coords.longitude;
+          }
+          </script> 
+         <body>-->
+
+       
+          
+  
 </body>
 
 
-  <body>
-    <script>
-      if( window.canRunAds === undefined ){
-        // adblocker detected, show fallback
-        showFallbackImage();
-      }
-    </script>
+<!------------------------------------------------------------------------------>
+<!ACC Anzeigen*************************************************>
+<div id="overlay">
+    <style>
+        .thumb {
+          height: 95px;
+          border: 1px solid rgb(19, 18, 18);
+          margin: 10px 5px 0 0;
+        }
+  </style>
+
+
+<section>
+  <span id="acc"></span><br>
+  alpha X: <input type="text" readonly id="x" value="" /><br>
+  alpha Y: <input type="text" readonly id="y" value="" /><br>
+  alpha Z: <input type="text" readonly id="z" value="" /><br>
+  </section>
+  
+  <div id="block">↑</div>
+
   </body>
+  <button a href='#' onclick='overlay()'>Schließen</a> </button>  
+  
+</div>
+<!ACC Anzeigen**************************Ende***********************>
 
 
-<script>
+<!**********************overlayNotes**************************>
+<div id="overlayNotes">
+  <div>
+    <style>
+      .thumb {
+        height: 95px;
+        border: 1px solid rgb(19, 18, 18);
+        margin: 10px 5px 0 0;
+      }
+</style>
+
+<head>
+  <meta charset="utf-8">
+  <title>Todo List App</title>
+
+</head>
+<body>
+  <div id="page-wrapper">
+    <!-- Form for new Todo Items -->
+    <form id="new-todo-form" method="POST" action="#">
+      <input type="text" name="new-todo" id="new-todo" placeholder="Was soll auf die Liste.." required>
+
+     
+     <label for="todoImg">Bild Dazu?</label>
+     <input type="file" name="file" id="todoImg" class="todoImg" />
+
+
+      <button class="saveNote" >Notiz Speichern!</button>
+  </form>
+
+  <img id="outImage" class="outImg" height="0">
+
+      
+
+    <ul id="todo-items"></ul>
+  </div>
+</body>
+    
+    <button a href='#' onclick='overlayNotes()'>Schließen</a> </button>
+    
+  </div>
+</div>
+<!**********************overlayNotes Ende**************************>
 
 
 
-var adBlockEnabled = false;
-var testAd = document.createElement('div');
-testAd.innerHTML = '&nbsp;';
-testAd.className = 'adsbox';
-document.body.appendChild(testAd);
-window.setTimeout(function() {
-  if (testAd.offsetHeight === 0) {
-    adBlockEnabled = true;
-	alert("mach dein Adblock aus :)");
-	location.reload();
-  }
-  testAd.remove();
-  console.log('AdBlock Enabled? ', adBlockEnabled)
-}, 100);
+    <!*********************Overlay Album***************************>
+    
+    <div id="overlayAlbum">
+    
+     
+        
 
-</script>
+        <style>
+          .thumb {
+            height: 95px;
+            border: 1px solid rgb(19, 18, 18);
+            margin: 10px 5px 0 0;
+          }
+        </style>
+        
+          <header>
+            <h1>Album</h1>
+          </header>
+
+    <input id="files" class="inButton" type="file" multiple/>
+
+    
+            <button id="ShowTuesday" class="swButton">Show</button>
+
+      <button id="deleteALL" class="delButton">DELETE ALL</button>
+
+      <button a href='#' onclick='overlayAlbum()'>Schließen</a> </button>
+        
+      
+      
+      <div class="ex">    <output id="result" /> </div>        
+
+
+ 
+       <img id="output"/>
+   
+      </div>
+    
+      <!**********************Overlay Album Ende**************************>
+   
+</body>
 </html>
